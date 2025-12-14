@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Starter Theme`,
-    description: `Starter Theme 2024`,
+    title: `Seek Studio`,
+    description: `Design for the Human Spirit`,
     author: `@carljoseph`,
     siteUrl: `https://c-b.works`,
   },
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `47244b367354d9df68bc03a796cf21`,
+        apiToken: `6efb6c2164d32a37ae5c7bb90cacb4`,
       },
     },
     `gatsby-plugin-sass`,

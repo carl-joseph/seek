@@ -2,9 +2,19 @@
 ## Layout Styling
 --------------------------------------------------------------*/
 
+@font-face {
+  font-family: 'Suisse Works';
+  src: url('../fonts/SuisseWorks.woff2') format('woff2'),
+      url('../fonts/SuisseWorks.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  color: #000;
+  color: #fff;
   font-size: 14px;
+  background: #000;
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   font-smooth: always;
@@ -14,3 +24,4 @@ body {
     color: #000;
   }
 }
+
