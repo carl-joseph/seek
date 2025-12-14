@@ -2,3 +2,11 @@
 ## Header Styling
 --------------------------------------------------------------*/
 
+.masthead {
+	width: 100%;
+	z-index: 12;
+	position: fixed;
+	mix-blend-mode: difference;
+	left: 0px;
+	top: 0px;
+}

@@ -22,6 +22,16 @@ a {
   overflow: hidden;
 }
 
+/* ------------ Font Styles ------------ */
+
+.f-18 {
+  font-size: 18px;
+}
+
+.f-500 {
+  font-weight: 500;
+}
+
 /* ------------ Grid Styles ------------ */
 
 .grid {
@@ -90,6 +100,10 @@ a {
 
 .mba {
   margin-bottom: auto;
+}
+
+.ml60 {
+  margin-left: 60px;
 }
 
 /* ------------ Padding Styles ------------ */
