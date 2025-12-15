@@ -3,36 +3,61 @@
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: 'Suisse Works';
-  src: url('../fonts/SuisseWorks.woff2') format('woff2'),
-      url('../fonts/SuisseWorks.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Suisse Works";
+    src: url("../fonts/SuisseWorks.woff2") format("woff2"), url("../fonts/SuisseWorks.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gerstner Programm FSL';
-  src: url('../fonts/GerstnerProgrammFSL-Medium.woff2') format('woff2'),
-      url('../fonts/GerstnerProgrammFSL-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gerstner Programm FSL";
+    src: url("../fonts/GerstnerProgrammFSL-Medium.woff2") format("woff2"), url("../fonts/GerstnerProgrammFSL-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
+.h0 {
+    font-size: 42.47px;
+    line-height: 1.01;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
+}
 
+.h1 {
+    font-size: 42.47px;
+    line-height: 1.01;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
+}
+
+.h2 {
+    font-size: 32.24px;
+    line-height: 1.11;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
+}
+
+.text-lg {
+    font-size: 18px;
+    font-family: "Gerstner Programm FSL";
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
 
 body {
-  color: #fff;
-  font-size: 15px;
-  background: #000;
-  font-family: 'Gerstner Programm FSL';
-  -webkit-font-smoothing: antialiased;
-  font-smooth: always;
-  text-rendering: optimizeLegibility;
-  ::selection {
-    background: #d2fd78;
-    color: #000;
-  }
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.2;
+    background: #000;
+    font-family: "Suisse Works", serif;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+    text-rendering: optimizeLegibility;
+    ::selection {
+        background: #d2fd78;
+        color: #000;
+    }
 }
-

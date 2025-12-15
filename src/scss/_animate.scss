@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+## Animation Styles
+--------------------------------------------------------------*/
+
+/* ------------ Opacity Link ------------ */
+
+.op-link {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    &:hover {
+        opacity: 0.5;
+    }
+    &.inverse {
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

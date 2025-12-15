@@ -7,6 +7,8 @@
   "dependencies": {
     "@gsap/react": "^2.1.0",
     "@studio-freight/react-lenis": "^0.0.47",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "gatsby": "^5.13.3",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
