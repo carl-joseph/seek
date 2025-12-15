@@ -11,11 +11,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Gerstner Programm FSL';
+  src: url('../fonts/GerstnerProgrammFSL-Medium.woff2') format('woff2'),
+      url('../fonts/GerstnerProgrammFSL-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 body {
   color: #fff;
   font-size: 15px;
   background: #000;
-  font-family: sans-serif;
+  font-family: 'Gerstner Programm FSL';
   -webkit-font-smoothing: antialiased;
   font-smooth: always;
   text-rendering: optimizeLegibility;
