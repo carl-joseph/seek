@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function Header() {
+export default function Header({ title }) {
     return (
-        <header className='masthead'>
-            <div className='flex p20 text-lg gap-20'>
+        <header className='masthead flex gap-10'>
+            <div className='flex w-50 p10 pt20 text-lg gap-20'>
                 <Link className='link' to='/'>
                     Seek
                 </Link>
@@ -14,6 +14,11 @@ export default function Header() {
                     <Link to='/information'>Information</Link>
                 </div>
             </div>
+            {title && (
+                <div className='w-50 p10 pl0 pt20'>
+                    <p className='text-lg'>{title}</p>
+                </div>
+            )}
         </header>
     )
 }

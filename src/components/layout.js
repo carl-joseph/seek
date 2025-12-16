@@ -15,12 +15,12 @@ const SCROLL_OPTIONS = {
     smoothTouch: false,
 }
 
-export default function Layout({ children }) {
-  return (
-    <ReactLenis root options={SCROLL_OPTIONS}>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </ReactLenis>
-  )
+export default function Layout({ children, title = null }) {
+    return (
+        <ReactLenis root options={SCROLL_OPTIONS}>
+            <Header title={title} />
+            <main>{children}</main>
+            <Footer />
+        </ReactLenis>
+    )
 }

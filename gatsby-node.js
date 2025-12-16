@@ -1,18 +1,23 @@
-// const path = require("path")
+const path = require("path")
 
-// exports.createPages = async ({ graphql, actions: { createPage } }) => {
-//   const { data } = await graphql(`
-//     query TemplateQuery {
-//     }
-//   `)
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+    const { data } = await graphql(`
+        query ProjectsQuery {
+            projects: allDatoCmsProject {
+                nodes {
+                    slug
+                }
+            }
+        }
+    `)
 
-// const { destructuredData } = data
-
-// destructuredData.nodes.forEach(({ slug }) => {
-//   return createPage({
-//     path: `/path/${slug}`,
-//     component: path.resolve("./src/templates/template.js"),
-//     context: { slug },
-//   })
-// })
-// }
+    data.projects.nodes
+        .filter(({ slug }) => slug)
+        .forEach(({ slug }) => {
+            createPage({
+                path: `/projects/${slug}`,
+                component: path.resolve("./src/templates/project.js"),
+                context: { slug },
+            })
+        })
+}

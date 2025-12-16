@@ -21,6 +21,7 @@ export const query = graphql`
     query ProjectsPageQuery {
         projects: allDatoCmsProject {
             nodes {
+                slug
                 previewTitle
                 previewDescription
                 previewMedia {

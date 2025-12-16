@@ -39,6 +39,7 @@ export const query = graphql`
                 gatsbyImageData
             }
             projects {
+                slug
                 previewTitle
                 previewDescription
                 previewMedia {

@@ -73,7 +73,7 @@ function ProjectItem({ project, index }) {
 
     return (
         <div ref={containerRef} className='bt-1'>
-            <SectionHeader title={project.previewTitle} caption={project.previewDescription} buttonText='View Brand' buttonLink={`/projects`} />
+            <SectionHeader title={project.previewTitle} caption={project.previewDescription} buttonText='View Brand' buttonLink={`/projects/${project.slug}`} />
             <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} spaceBetween={5} loop freeMode className='project-swiper'>
                 {doubledMedia.map((media, i) => (
                     <SwiperSlide key={i}>

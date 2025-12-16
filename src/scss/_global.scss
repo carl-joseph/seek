@@ -46,6 +46,26 @@ a {
     gap: 20px;
 }
 
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------ Order Styles ------------ */
+
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
 /* ------------ Flex Styles ------------ */
 
 .flex {
@@ -73,6 +93,10 @@ a {
 }
 
 /* ------------ Gap Styles ------------ */
+
+.gap-0 {
+    gap: 0px;
+}
 
 .gap-5 {
     gap: 5px;
@@ -128,6 +152,11 @@ a {
     margin-bottom: 40px;
 }
 
+.mb10 {
+    margin-bottom: 10px;
+}
+
+
 /* ------------ Padding Styles ------------ */
 
 .p0 {
@@ -144,6 +173,30 @@ a {
 
 .p40 {
     padding: 40px;
+}
+
+.pl10{
+    padding-left: 10px;
+}
+
+.pl0 {
+    padding-left: 0px;
+}
+
+.pt0 {
+    padding-top: 0px;
+}
+
+.pb0 {
+    padding-bottom: 0px;
+}
+
+.pr0 {
+    padding-right: 0px;
+}
+
+.pt20 {
+    padding-top: 20px;
 }
 
 /* ------------ Position Styles ------------ */
@@ -236,6 +289,11 @@ div.bg-image,
     aspect-ratio: 16 / 10;
 }
 
+.ratio-2-3 {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+}
+
 /* ------------ Width Styles ------------ */
 
 .w-50 {
@@ -254,6 +312,10 @@ div.bg-image,
 
 .h-100vh {
     height: 100vh;
+}
+
+.h-80vh {
+    height: 80vh;
 }
 
 /* ------------ Max Styles ------------ */
@@ -296,5 +358,11 @@ div.bg-image,
 .m-100 {
     @media (max-width: 768px) {
         width: 100%;
+    }
+}
+
+.m-order-reset {
+    @media (max-width: 768px) {
+        order: unset;
     }
 }
