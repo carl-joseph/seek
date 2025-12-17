@@ -8,7 +8,8 @@ export default function RelatedProjects({ projects }) {
     return (
         <div className='p10'>
             <Spacer />
-            <p className='gerstner mb10'>Related Projects</p>
+            <Spacer />
+            <p className='gerstner f-20 mb10'>Related Projects</p>
             <div className='grid-2 gap-10'>
                 {projects.map((project, i) => (
                     <RelatedProjectItem key={i} project={project} />

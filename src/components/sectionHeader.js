@@ -5,9 +5,9 @@ import { GatsbyImage } from "gatsby-plugin-image"
 export default function SectionHeader({ title, caption, buttonText, buttonLink }) {
     return (
         <div className='flex text-lg p20'>
-            <div className='max-300 w-100'>{title}</div>
-            {caption && <div className='max-300 w-100'>{caption}</div>}
-            <Link to={buttonLink || "#"} className='link mla btn-arrow max-300 w-100 justify-end'>
+            <Link to={buttonLink || "#"} className='max-300 w-100'>{title}</Link>
+            {caption && <div className='max-300 m-hide w-100'>{caption}</div>}
+            <Link to={buttonLink || "#"} className='link mla btn-arrow max-300 w-100 m-wa justify-end'>
                 {buttonText} <Arrow />
             </Link>
         </div>

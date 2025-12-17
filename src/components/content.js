@@ -47,7 +47,7 @@ function TextAndImage({ content, asset, reverse }) {
                 <MediaAsset video={asset?.video} image={asset?.image} />
             </div>
             <div className={`flex  ${reverse ? "order-1 m-order-reset" : ""}`}>
-                <h2 className='h2'>{content}</h2>
+                <h2 className='h2 sticky mba'>{content}</h2>
             </div>
         </div>
     )

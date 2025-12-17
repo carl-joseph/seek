@@ -4,7 +4,7 @@ import Seo from "../components/seo"
 import Layout from "../components/layout"
 import HeroBanner from "../components/heroBanner"
 import ProjectIntro from "../components/projectIntro"
-import ContentBlocks from "../components/contentBlocks"
+import Content from "../components/content"
 import Credits from "../components/credits"
 import RelatedProjects from "../components/relatedProjects"
 
@@ -18,7 +18,7 @@ export default function Project({ data: { project, relatedProjects } }) {
             <HeroBanner image={project.heroAsset?.image} video={project.heroAsset?.video} />
             <div className='bg-black pos-rel z-2'>
                 <ProjectIntro introduction={project.introduction} client={project.client} service={project.service} sector={project.sector} year={project.year} />
-                <ContentBlocks blocks={project.contentBlocks} />
+                <Content blocks={project.contentBlocks} />
                 <Credits credits={project.credits} content={project.creditsContent} />
                 <RelatedProjects projects={shuffledProjects} />
             </div>

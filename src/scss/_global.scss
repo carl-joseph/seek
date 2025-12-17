@@ -35,6 +35,10 @@ a {
     overflow: hidden;
 }
 
+.fw-300 {
+    font-weight: 300;
+}
+
 /* ------------ Font Styles ------------ */
 
 .f-18 {
@@ -151,6 +155,10 @@ a {
     margin-top: 10px;
 }
 
+.mt20 {
+    margin-top:20px;
+}
+
 .ml60 {
     margin-left: 60px;
 }
@@ -214,7 +222,7 @@ a {
 
 .sticky {
     position: sticky;
-    top: 0;
+    top: 58px;
 }
 
 /* ------------ Z-Index Styles ------------ */
@@ -376,5 +384,11 @@ div.bg-image,
 .m-order-reset {
     @media (max-width: 768px) {
         order: unset;
+    }
+}
+
+.m-wa {
+    @media (max-width: 768px) {
+        width: unset;
     }
 }
