@@ -13,7 +13,7 @@ export default function Journal({ journals }) {
     return (
         <div className='h-100vh pos-rel flex flex-col' onMouseMove={handleMouseMove}>
             <div className='text-lg text-center p10'>Journal</div>
-            <div className='flex flex-col gap-20 align-center justify-center h-100 journal-titles'>
+            <div className='flex flex-col gap-20 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
                     <div key={i} className={`h0 journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
                         {journal.previewTitle}

@@ -73,7 +73,8 @@ function ProjectItem({ project, index }) {
     return (
         <div ref={containerRef} className='bt-1'>
             <SectionHeader title={project.previewTitle} caption={project.previewDescription} buttonText='View Brand' buttonLink={`/projects/${project.slug}`} />
-            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} spaceBetween={5} loop freeMode className='project-swiper'>
+            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} breakpoints={{ 0: { slidesPerView: 2,}, 768: { slidesPerView: 4,},
+  }} spaceBetween={5} loop freeMode className='project-swiper'>
                 {doubledMedia.map((media, i) => (
                     <SwiperSlide key={i}>
                         <div className={`${getAspectRatioClass(media.aspectRatio, "ratio-4-3")} pos-rel overflow`}>
