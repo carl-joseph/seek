@@ -16,6 +16,16 @@
     }
 }
 
+/* ------------ Fade In Link ------------ */
+
+.fade--in {
+    opacity: 0;
+    transition: 0.65s ease opacity 0.2s;
+    &.sal-animate {
+        opacity: 1;
+    }
+}
+
 /* ------------ Button Link ------------ */
 
 .btn-arrow {
