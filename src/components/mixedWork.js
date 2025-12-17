@@ -34,7 +34,7 @@ function WorkItem({ item }) {
     const aspectRatio = item.assetContent?.aspectRatio
 
     return (
-        <div className='embla__slide'>
+        <div className='embla__slide cursor-grab'>
             <div className={`${getAspectRatioClass(aspectRatio)} pos-rel overflow`}>
                 <MediaAsset video={asset?.video} image={asset?.image} alt={item.title} />
             </div>

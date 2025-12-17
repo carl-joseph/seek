@@ -19,16 +19,18 @@ export default function Projects({ projects, alt }) {
             {projects.map((project, i) => (
                 <ProjectItem key={i} project={project} index={i} />
             ))}
-            {!alt && (
-                <>
-                    <Spacer />
-                    <Link to='/projects' className='text-lg op-link inverse text-center link'>
-                        View All Projects
-                    </Link>
-                    <Spacer />
-                </>
-            )}
+            {!alt && (<ViewAll />)}
         </div>
+    )
+}
+
+const ViewAll = () => {
+    return (
+        <React.Fragment>
+            <Spacer />
+            <Link to='/projects' className='text-lg op-link inverse text-center link'>View All Projects</Link>
+            <Spacer />
+        </React.Fragment>
     )
 }
 
@@ -38,34 +40,31 @@ function ProjectItem({ project, index }) {
     const progressRef = useRef(0)
     const scrollProgressRef = useRef(0)
     const isOdd = index % 2 !== 0
+    const SCROLL_INFLUENCE = 0.2
     const autoScrollSpeed = isOdd ? -0.0003 : 0.0002
     const doubledMedia = [...(project.previewMedia || []), ...(project.previewMedia || [])]
 
     useGSAP(
         () => {
             if (!swiperRef.current || !containerRef.current) return
-
             const swiper = swiperRef.current
-
             const ticker = () => {
-                progressRef.current += autoScrollSpeed
-                const scrollOffset = isOdd ? -scrollProgressRef.current : scrollProgressRef.current
-                const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
-                swiper.setProgress(totalProgress, 0)
+              progressRef.current += autoScrollSpeed
+              const easedScroll = gsap.parseEase("power2.out")(scrollProgressRef.current)
+              const scrollOffset = (isOdd ? -1 : 1) * easedScroll * SCROLL_INFLUENCE
+              const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
+              swiper.setProgress(totalProgress, 0)
             }
-
             gsap.ticker.add(ticker)
-
             ScrollTrigger.create({
                 trigger: containerRef.current,
-                start: "50% bottom",
-                end: "80% top",
+                start: "top bottom+=20%",
+                end: "bottom top-=20%",
                 scrub: true,
                 onUpdate: self => {
                     scrollProgressRef.current = self.progress
                 },
             })
-
             return () => gsap.ticker.remove(ticker)
         },
         { dependencies: [autoScrollSpeed], scope: containerRef }

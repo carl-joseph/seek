@@ -2,8 +2,6 @@
 ## Animation Styles
 --------------------------------------------------------------*/
 
-/* ------------ Opacity Link ------------ */
-
 .op-link {
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -15,5 +13,20 @@
         &:hover {
             opacity: 1;
         }
+    }
+}
+
+/* ------------ Opacity Link ------------ */
+
+.btn-arrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    svg {
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+    &:hover svg {
+        transform: rotate(90deg);
     }
 }

@@ -6,6 +6,13 @@ a {
     color: inherit;
 }
 
+.cursor-grab {
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
+}
+
 /* ------------ Border Styles ------------ */
 
 .bt-1 {

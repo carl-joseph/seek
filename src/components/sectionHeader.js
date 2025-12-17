@@ -8,8 +8,7 @@ export default function SectionHeader({ title, caption, buttonText, buttonLink }
             <div className='max-300 w-100'>{title}</div>
             {caption && <div className='max-300 w-100'>{caption}</div>}
             <Link to={buttonLink || "#"} className='link mla btn-arrow max-300 w-100 justify-end'>
-                {buttonText}
-                <Arrow />
+                {buttonText} <Arrow />
             </Link>
         </div>
     )

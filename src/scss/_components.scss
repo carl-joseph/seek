@@ -2,22 +2,6 @@
 ## Component Styles
 --------------------------------------------------------------*/
 
-/* ------------ Button Styles ------------ */
-
-.btn-arrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    svg {
-        transition: transform 0.3s ease;
-    }
-    &:hover svg {
-        transform: translateX(5px);
-    }
-}
-
-/* ------------ Journal Styles ------------ */
-
 .journal-title {
     display: flex;
     align-items: baseline;
