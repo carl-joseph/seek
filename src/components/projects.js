@@ -1,13 +1,13 @@
+import { Link } from "gatsby"
 import React, { useRef } from "react"
 import { useGSAP } from "@gsap/react"
-import { Link } from "gatsby"
-import { Swiper, SwiperSlide } from "swiper/react"
 import { FreeMode } from "swiper/modules"
-import gsap from "gsap"
+import { Swiper, SwiperSlide } from "swiper/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Spacer from "./spacer"
 import SectionHeader, { MediaAsset } from "./sectionHeader"
 import { getAspectRatioClass } from "./utils"
+import Spacer from "./spacer"
+import gsap from "gsap"
 import "swiper/css"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)

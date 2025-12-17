@@ -4,10 +4,8 @@ import { Link } from "gatsby"
 export default function Header({ title }) {
     return (
         <header className='masthead flex gap-10'>
-            <div className='flex w-50 p10 pt20 text-lg gap-20'>
-                <Link className='link' to='/'>
-                    Seek
-                </Link>
+            <div className='flex w-50 p20 text-lg gap-20'>
+                <Link className='link' to='/'>Seek</Link>
                 <div className='ml60 flex gap-20'>
                     <Link to='/projects'>Projects</Link>
                     <Link to='/journal'>Journal</Link>

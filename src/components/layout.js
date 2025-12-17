@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { ReactLenis } from "@studio-freight/react-lenis"
+import PageTransition from "./pageTransition"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -18,9 +19,11 @@ const SCROLL_OPTIONS = {
 export default function Layout({ children, title = null }) {
     return (
         <ReactLenis root options={SCROLL_OPTIONS}>
-            <Header title={title} />
-            <main>{children}</main>
-            <Footer />
+            <Header />
+            <PageTransition>
+                <main>{children}</main>
+                <Footer />
+            </PageTransition>
         </ReactLenis>
     )
 }

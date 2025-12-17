@@ -16,7 +16,7 @@
     }
 }
 
-/* ------------ Opacity Link ------------ */
+/* ------------ Button Link ------------ */
 
 .btn-arrow {
     display: flex;
@@ -29,4 +29,36 @@
     &:hover svg {
         transform: rotate(90deg);
     }
+}
+
+/* ------------ Page Transition ------------ */
+
+.page--transition {
+  opacity: 0;
+  will-change: opacity;
+  z-index: 9999;
+  &.fade--out {
+    animation: fadeOut 0.25s ease forwards;
+  }
+  &.fade--in {
+    animation: fadeIn 0.4s ease forwards 0.5s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
