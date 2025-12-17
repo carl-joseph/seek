@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import Projects from "../components/projects"
-import Spacer from "../components/spacer"
 
 export default function InformationPage({ data: { page } }) {
     return (
