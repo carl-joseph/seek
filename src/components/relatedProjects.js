@@ -21,12 +21,15 @@ export default function RelatedProjects({ projects }) {
 
 function RelatedProjectItem({ project }) {
     return (
-        <Link to={`/projects/${project.slug}`} className='link'>
+        <Link to={`/projects/${project.slug}`} className='link project--hover'>
             <div className='ratio-16-9 pos-rel overflow'>
                 {project.heroAsset?.image && <GatsbyImage className='bg-image' image={project.heroAsset.image.gatsbyImageData} alt={project.title} />}
                 {project.heroAsset?.video && <video className='bg-image' src={project.heroAsset.video} autoPlay muted loop playsInline />}
             </div>
-            <div className='mt10 text-lg'>{project.title}</div>
+            <div className='flex mt10 space-between gap-20'>
+                <div className='text-lg'>{project.title}</div>
+                <p className='text-lg see-more'>See Project</p>
+            </div>
         </Link>
     )
 }

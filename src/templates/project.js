@@ -4,9 +4,9 @@ import Seo from "../components/seo"
 import Layout from "../components/layout"
 import HeroBanner from "../components/heroBanner"
 import ProjectIntro from "../components/projectIntro"
+import RelatedProjects from "../components/relatedProjects"
 import Content from "../components/content"
 import Credits from "../components/credits"
-import RelatedProjects from "../components/relatedProjects"
 
 export default function Project({ data: { project, relatedProjects } }) {
     const shuffledProjects = relatedProjects.nodes

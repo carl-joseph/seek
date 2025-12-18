@@ -16,6 +16,20 @@
     }
 }
 
+/* ------------ Related Project ------------ */
+
+.project--hover {
+    .see-more {
+        opacity: 0;
+        transition: 0.5s ease opacity;
+    }
+    &:hover {
+        .see-more {
+            opacity: 1;
+        }
+    }
+}
+
 /* ------------ Fade In Link ------------ */
 
 .fade--in {

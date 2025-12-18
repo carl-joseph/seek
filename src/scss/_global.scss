@@ -41,12 +41,34 @@ a {
 
 /* ------------ Font Styles ------------ */
 
+.f-20 {
+  font-size: 20px;
+}
+
 .f-18 {
     font-size: 18px;
 }
 
+.f-15 {
+  font-size: 15px;
+}
+
 .f-500 {
     font-weight: 500;
+}
+
+.text-lg {
+  font-size: 18px;
+  font-family: "Gerstner Programm FSL";
+  font-weight: 500;
+  line-height: 1;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }   
+}
+
+.gerstner {
+  font-family: "Gerstner Programm FSL";
 }
 
 /* ------------ Grid Styles ------------ */
@@ -346,6 +368,10 @@ div.bg-image,
 
 .max-300 {
     max-width: 300px;
+}
+
+.max-350 {
+    max-width: 350px;
 }
 
 .max-1600 {
