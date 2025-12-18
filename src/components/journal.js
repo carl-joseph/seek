@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { MediaAsset } from "./sectionHeader"
 import { getAspectRatioClass } from "./utils"
 
@@ -15,9 +16,9 @@ export default function Journal({ journals }) {
             <div className='text-lg text-center p10'>Journal</div>
             <div className='flex flex-col gap-20 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
-                    <div key={i} className={`h0 journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
+                    <Link key={i} to={`/journal/${journal.slug}`} className={`h0 journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
                         {journal.previewTitle}
-                    </div>
+                    </Link>
                 ))}
             </div>
             {hoveredIndex !== null && journals[hoveredIndex]?.assetContent?.assetField && <CursorImage asset={journals[hoveredIndex].assetContent.assetField} aspectRatio={journals[hoveredIndex].assetContent.aspectRatio} mousePos={mousePos} />}

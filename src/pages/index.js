@@ -53,6 +53,7 @@ export const query = graphql`
                 }
             }
             journals {
+                slug
                 previewTitle
                 assetContent {
                     aspectRatio
