@@ -113,6 +113,10 @@ a {
     flex-direction: column;
 }
 
+.flex-1 {
+    flex: 1;
+}
+
 .align-center {
     align-items: center;
 }
@@ -145,6 +149,10 @@ a {
 
 .gap-40 {
     gap: 40px;
+}
+
+.row-gap-40 {
+    row-gap: 40px;
 }
 
 /* ------------ Margin Styles ------------ */
@@ -183,6 +191,10 @@ a {
 
 .ml60 {
     margin-left: 60px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
 }
 
 .mb-40 {
@@ -226,6 +238,10 @@ a {
 
 .pb0 {
     padding-bottom: 0px;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
 }
 
 .pr0 {

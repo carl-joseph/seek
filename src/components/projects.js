@@ -19,18 +19,20 @@ export default function Projects({ projects, alt }) {
             {projects.map((project, i) => (
                 <ProjectItem key={i} project={project} index={i} />
             ))}
-            {!alt && (<ViewAll />)}
+            {!alt && <ViewAll />}
         </div>
     )
 }
 
 const ViewAll = () => {
     return (
-        <React.Fragment>
+        <>
             <Spacer />
-            <Link to='/projects' className='text-lg op-link inverse text-center link'>View All Projects</Link>
+            <Link to='/projects' className='text-lg op-link inverse text-center link'>
+                View All Projects
+            </Link>
             <Spacer />
-        </React.Fragment>
+        </>
     )
 }
 
@@ -49,11 +51,11 @@ function ProjectItem({ project, index }) {
             if (!swiperRef.current || !containerRef.current) return
             const swiper = swiperRef.current
             const ticker = () => {
-              progressRef.current += autoScrollSpeed
-              const easedScroll = gsap.parseEase("power2.out")(scrollProgressRef.current)
-              const scrollOffset = (isOdd ? -1 : 1) * easedScroll * SCROLL_INFLUENCE
-              const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
-              swiper.setProgress(totalProgress, 0)
+                progressRef.current += autoScrollSpeed
+                const easedScroll = gsap.parseEase("power2.out")(scrollProgressRef.current)
+                const scrollOffset = (isOdd ? -1 : 1) * easedScroll * SCROLL_INFLUENCE
+                const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
+                swiper.setProgress(totalProgress, 0)
             }
             gsap.ticker.add(ticker)
             ScrollTrigger.create({
@@ -73,8 +75,7 @@ function ProjectItem({ project, index }) {
     return (
         <div ref={containerRef} className='bt-1'>
             <SectionHeader title={project.previewTitle} caption={project.previewDescription} buttonText='View Brand' buttonLink={`/projects/${project.slug}`} />
-            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} breakpoints={{ 0: { slidesPerView: 2,}, 768: { slidesPerView: 4,},
-  }} spaceBetween={5} loop freeMode className='project-swiper'>
+            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} breakpoints={{ 0: { slidesPerView: 2 }, 768: { slidesPerView: 4 } }} spaceBetween={5} loop freeMode className='project-swiper'>
                 {doubledMedia.map((media, i) => (
                     <SwiperSlide key={i}>
                         <div className={`${getAspectRatioClass(media.aspectRatio, "ratio-4-3")} pos-rel overflow`}>

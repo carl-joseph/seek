@@ -2,38 +2,28 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import HeroBanner from "../components/heroBanner"
-import ProjectIntro from "../components/projectIntro"
-import RelatedProjects from "../components/relatedProjects"
-import Content from "../components/content"
-import Credits from "../components/credits"
+import ContentBlocks from "../components/content"
+import JournalHero from "../components/journalHero"
+import Spacer from "../components/spacer"
 
-export default function Project({ data: { project, relatedProjects } }) {
-    const shuffledProjects = relatedProjects.nodes
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 2)
-
+export default function Journal({ data: { journal } }) {
     return (
-        <Layout title={project.title}>
-            <HeroBanner image={project.heroAsset?.image} video={project.heroAsset?.video} />
-            <div className='bg-black pos-rel z-2'>
-                <ProjectIntro introduction={project.introduction} client={project.client} service={project.service} sector={project.sector} year={project.year} />
-                <Content blocks={project.contentBlocks} />
-                <Credits credits={project.credits} content={project.creditsContent} />
-                <RelatedProjects projects={shuffledProjects} />
-            </div>
+        <Layout>
+            <Spacer />
+            <Spacer />
+            <JournalHero title={journal.title} asset={journal.heroAsset} />
+            <ContentBlocks blocks={journal.contentBlocks} />
         </Layout>
     )
 }
 
-export const Head = ({ data: { project } }) => <Seo title={project.title} />
+export const Head = ({ data: { journal } }) => <Seo title={journal.title} />
 
 export const query = graphql`
-    query ProjectQuery($slug: String!) {
-        project: datoCmsProject(slug: { eq: $slug }) {
+    query JournalQuery($slug: String!) {
+        journal: datoCmsJournal(slug: { eq: $slug }) {
             title
             slug
-            introduction
             heroAsset {
                 ... on DatoCmsAssetBlock {
                     image {
@@ -41,12 +31,6 @@ export const query = graphql`
                     }
                     video
                 }
-            }
-            client
-            service
-            year
-            sector {
-                title
             }
             contentBlocks {
                 ... on DatoCmsFullWidthAssetBlock {
@@ -65,24 +49,6 @@ export const query = graphql`
                     content
                     caption
                     reverse
-                    asset {
-                        ... on DatoCmsAssetBlock {
-                            image {
-                                gatsbyImageData
-                            }
-                            video
-                        }
-                    }
-                }
-                ... on DatoCmsTitleContentBlock {
-                    __typename
-                    title
-                    content
-                }
-                ... on DatoCmsContentImageBlock {
-                    __typename
-                    title
-                    content
                     asset {
                         ... on DatoCmsAssetBlock {
                             image {
@@ -125,24 +91,22 @@ export const query = graphql`
                         }
                     }
                 }
-            }
-            credits {
-                ... on DatoCmsCreditBlock {
+                ... on DatoCmsTitleContentBlock {
+                    __typename
+                    title
                     content
                 }
-            }
-            creditsContent
-        }
-        relatedProjects: allDatoCmsProject(filter: { slug: { ne: $slug } }) {
-            nodes {
-                title
-                slug
-                heroAsset {
-                    ... on DatoCmsAssetBlock {
-                        image {
-                            gatsbyImageData
+                ... on DatoCmsContentImageBlock {
+                    __typename
+                    title
+                    content
+                    asset {
+                        ... on DatoCmsAssetBlock {
+                            image {
+                                gatsbyImageData
+                            }
+                            video
                         }
-                        video
                     }
                 }
             }

@@ -19,7 +19,7 @@ const SCROLL_OPTIONS = {
 export default function Layout({ children, title = null }) {
     return (
         <ReactLenis root options={SCROLL_OPTIONS}>
-            <Header />
+            <Header title={title}/>
             <PageTransition>
                 <main>{children}</main>
                 <Footer />
