@@ -53,6 +53,9 @@
 .embla__slide {
     flex: 0 0 auto;
     width: calc(25% - 4px);
+    &:last-child {
+        margin-right: 5px;
+    }
     @media (max-width: 768px) {
         width: calc(50% - 4px);
     }

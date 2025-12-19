@@ -23,7 +23,10 @@ export function Arrow() {
 }
 
 export function MediaAsset({ video, image, alt = "" }) {
-    if (video) return <video className='bg-image' src={video} autoPlay muted loop playsInline />
-    if (image?.gatsbyImageData) return <GatsbyImage className='bg-image' image={image.gatsbyImageData} alt={alt} />
-    return null
+    return (
+    <>
+        {( image ? <GatsbyImage className='bg-image' image={image.gatsbyImageData} alt={alt} />:'')}
+        {( video ? <video className='bg-image' src={video} autoPlay muted loop playsInline />:'')}
+    </>
+    )
 }

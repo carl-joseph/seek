@@ -43,7 +43,7 @@ function ProjectItem({ project, index }) {
     const scrollProgressRef = useRef(0)
     const isOdd = index % 2 !== 0
     const SCROLL_INFLUENCE = 0.2
-    const autoScrollSpeed = isOdd ? -0.0003 : 0.0002
+    const autoScrollSpeed = isOdd ? -0.00012 : 0.00008
     const doubledMedia = [...(project.previewMedia || []), ...(project.previewMedia || [])]
 
     useGSAP(

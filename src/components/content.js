@@ -37,7 +37,7 @@ function FullWidthAsset({ asset }) {
     if (!asset) return null
     return (
         <div className='p10 pt0 pb0'>
-            <div className='ratio-16-10 pos-rel overflow'>
+            <div className='ratio-16-10 bg-grey pos-rel overflow'>
                 <MediaAsset video={asset.video} image={asset.image} />
             </div>
         </div>
@@ -47,7 +47,7 @@ function FullWidthAsset({ asset }) {
 function TextAndImage({ content, caption, asset, reverse }) {
     return (
         <div className='grid-2 gap-10 p10 pt0 pb0'>
-            <div className={`ratio-2-3 pos-rel overflow ${reverse ? "order-2 m-order-reset" : ""}`}>
+            <div className={`ratio-2-3 bg-grey pos-rel overflow ${reverse ? "order-2 m-order-reset" : ""}`}>
                 <MediaAsset video={asset?.video} image={asset?.image} />
             </div>
             <div className={`flex flex-col gap-40 ${reverse ? "order-1 m-order-reset" : ""}`}>
@@ -76,12 +76,12 @@ function TwoImages({ imageOne, imageTwo }) {
     return (
         <div className='grid-2 gap-10'>
             {imageOne && (
-                <div className={`${getAspectRatioClass(imageOne.aspectRatio)} pos-rel overflow`}>
+                <div className={`${getAspectRatioClass(imageOne.aspectRatio)} bg-grey pos-rel overflow`}>
                     <MediaAsset video={imageOne.assetField?.video} image={imageOne.assetField?.image} />
                 </div>
             )}
             {imageTwo && (
-                <div className={`${getAspectRatioClass(imageTwo.aspectRatio)} pos-rel overflow`}>
+                <div className={`${getAspectRatioClass(imageTwo.aspectRatio)} bg-grey pos-rel overflow`}>
                     <MediaAsset video={imageTwo.assetField?.video} image={imageTwo.assetField?.image} />
                 </div>
             )}
@@ -106,7 +106,7 @@ function ContentImage({ title, content, asset }) {
                 <div />
                 <div className="flex flex-col gap-40">
                     <div className='f-20 flex flex-col gap-20' dangerouslySetInnerHTML={{ __html: content }} />
-                    <div className='ratio-4-3 pos-rel overflow'>
+                    <div className='ratio-4-3 bg-grey pos-rel overflow'>
                         <MediaAsset video={asset?.video} image={asset?.image} />
                     </div>
                 </div>
