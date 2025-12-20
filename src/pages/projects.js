@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
-import Projects from "../components/projects"
+import ProjectsFilter from "../components/projectsFilter"
 import Spacer from "../components/spacer"
 
 export default function ProjectsPage({ data: { projects } }) {
@@ -10,7 +10,7 @@ export default function ProjectsPage({ data: { projects } }) {
         <Layout>
             <Spacer />
             <Spacer />
-            <Projects projects={projects.nodes} alt />
+            <ProjectsFilter projects={projects.nodes} />
         </Layout>
     )
 }
@@ -24,6 +24,9 @@ export const query = graphql`
                 slug
                 previewTitle
                 previewDescription
+                sector {
+                    title
+                }
                 previewMedia {
                     aspectRatio
                     assetField {

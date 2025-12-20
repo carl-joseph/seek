@@ -3,56 +3,60 @@
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: "Suisse Works";
-  src: url("../fonts/SuisseWorks.woff2") format("woff2"), url("../fonts/SuisseWorks.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Suisse Works";
+    src: url("../fonts/SuisseWorks.woff2") format("woff2"), url("../fonts/SuisseWorks.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Gerstner Programm FSL";
-  src: url("../fonts/GerstnerProgrammFSL-Medium.woff2") format("woff2"), 
-  url("../fonts/GerstnerProgrammFSL-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gerstner Programm FSL";
+    src: url("../fonts/GerstnerProgrammFSL-Medium.woff2") format("woff2"), url("../fonts/GerstnerProgrammFSL-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gerstner Programm FSL';
-  src: url('../fonts/GerstnerProgrammFSL-Light.woff2') format('woff2'),
-      url('../fonts/GerstnerProgrammFSL-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Gerstner Programm FSL";
+    src: url("../fonts/GerstnerProgrammFSL-Light.woff2") format("woff2"), url("../fonts/GerstnerProgrammFSL-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 .h0 {
-  line-height: 1;
-  font-size: 42px;
-  font-family: "Suisse Works", serif;
-  font-weight: 400;
-  @media (max-width: 768px) {
-    font-size: 34px;
-  }
+    line-height: 1;
+    font-size: 42px;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
+    @media (max-width: 768px) {
+        font-size: 34px;
+    }
+    &.large {
+        font-size: 64px;
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
 }
 
 .h1 {
-  line-height: 1;
-  font-size: 42px;
-  font-family: "Suisse Works", serif;
-  font-weight: 400;
-  @media (max-width: 768px) {
-    font-size: 34px;
-  }
+    line-height: 1;
+    font-size: 42px;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
+    @media (max-width: 768px) {
+        font-size: 34px;
+    }
 }
 
 .h2 {
-  font-size: 32px;
-  line-height: 1.1;
-  font-family: "Suisse Works", serif;
-  font-weight: 400;
+    font-size: 32px;
+    line-height: 1.1;
+    font-family: "Suisse Works", serif;
+    font-weight: 400;
 }
 
 body {

@@ -9,9 +9,7 @@ import Content from "../components/content"
 import Credits from "../components/credits"
 
 export default function Project({ data: { project, relatedProjects } }) {
-    const shuffledProjects = relatedProjects.nodes
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 2)
+    const shuffledProjects = relatedProjects.nodes.sort(() => Math.random() - 0.5).slice(0, 2)
 
     return (
         <Layout title={project.title}>
@@ -84,7 +82,8 @@ export const query = graphql`
                     title
                     content
                     asset {
-                        ... on DatoCmsAssetBlock {
+                        aspectRatio
+                        assetField {
                             image {
                                 gatsbyImageData
                             }

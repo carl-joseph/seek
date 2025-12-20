@@ -8,10 +8,10 @@ import Spacer from "../components/spacer"
 
 export default function Journal({ data: { journal } }) {
     return (
-        <Layout>
+        <Layout whiteBg>
             <Spacer />
             <Spacer />
-            <JournalHero title={journal.title} asset={journal.heroAsset} />
+            <JournalHero title={journal.title} category={journal.category?.title} asset={journal.heroAsset} />
             <ContentBlocks blocks={journal.contentBlocks} />
         </Layout>
     )
@@ -24,6 +24,9 @@ export const query = graphql`
         journal: datoCmsJournal(slug: { eq: $slug }) {
             title
             slug
+            category {
+                title
+            }
             heroAsset {
                 ... on DatoCmsAssetBlock {
                     image {
@@ -101,11 +104,16 @@ export const query = graphql`
                     title
                     content
                     asset {
-                        ... on DatoCmsAssetBlock {
-                            image {
-                                gatsbyImageData
+                        ... on DatoCmsMediaBlock {
+                            aspectRatio
+                            assetField {
+                                ... on DatoCmsAssetBlock {
+                                    image {
+                                        gatsbyImageData
+                                    }
+                                    video
+                                }
                             }
-                            video
                         }
                     }
                 }

@@ -43,6 +43,11 @@ a {
     font-weight: 300;
 }
 
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 /* ------------ Font Styles ------------ */
 
 .f-20 {
@@ -105,6 +110,10 @@ a {
 
 /* ------------ Flex Styles ------------ */
 
+.block {
+    display: block;
+}
+
 .flex {
     display: flex;
 }
@@ -153,6 +162,10 @@ a {
 
 .gap-40 {
     gap: 40px;
+}
+
+.gap-60 {
+    gap: 60px;
 }
 
 .row-gap-40 {
@@ -297,6 +310,14 @@ a {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.bg-light {
+    background-color: #F2F2F2;
+}
+
+.text-black {
+    color: #000;
+}
+
 /* ------------ Image Styles ------------ */
 
 div.bg-image,
@@ -387,7 +408,7 @@ div.bg-image,
 }
 
 .h-100vh {
-    height: 100vh;
+    height: 100svh;
 }
 
 .h-80vh {
@@ -398,6 +419,10 @@ div.bg-image,
 
 .min-100 {
     min-width: 100px;
+}
+
+.max-120 {
+    max-width: 120px;
 }
 
 .max-280 {

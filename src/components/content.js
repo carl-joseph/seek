@@ -106,8 +106,8 @@ function ContentImage({ title, content, asset }) {
                 <div />
                 <div className="flex flex-col gap-40">
                     <div className='f-20 flex flex-col gap-20' dangerouslySetInnerHTML={{ __html: content }} />
-                    <div className='ratio-4-3 bg-grey pos-rel overflow'>
-                        <MediaAsset video={asset?.video} image={asset?.image} />
+                    <div className={`${getAspectRatioClass(asset?.aspectRatio)} bg-grey pos-rel overflow`}>
+                        <MediaAsset video={asset?.assetField?.video} image={asset?.assetField?.image} />
                     </div>
                 </div>
             </div>

@@ -55,6 +55,9 @@ export const query = graphql`
             journals {
                 slug
                 previewTitle
+                category {
+                    title
+                }
                 assetContent {
                     aspectRatio
                     assetField {
