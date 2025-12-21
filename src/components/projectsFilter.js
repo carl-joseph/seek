@@ -40,7 +40,7 @@ export default function ProjectsFilter({ projects }) {
     return (
         <>
             <div className='p10'>
-                <div className='flex gap-5 text-lg'>
+                <div className='flex gap-5 text-lg flex-wrap'>
                     {sectors.map((sector, i) => (
                         <button key={sector} onClick={() => onClick(sector)} className={`${activeFilter === sector ? "" : "op-50"} filter`}>
                             {sector}{i < sectors.length - 1 && ","}

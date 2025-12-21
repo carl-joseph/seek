@@ -45,29 +45,53 @@ function ProjectItem({ project, index }) {
     const doubledMedia = [...(project.previewMedia || []), ...(project.previewMedia || [])]
 
     useGSAP(
-        () => {
-            if (!swiperRef.current || !containerRef.current) return
-            const swiper = swiperRef.current
-            const ticker = () => {
-                progressRef.current += autoScrollSpeed
-                const easedScroll = gsap.parseEase("power2.out")(scrollProgressRef.current)
-                const scrollOffset = (isOdd ? -1 : 1) * easedScroll * SCROLL_INFLUENCE
-                const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
-                swiper.setProgress(totalProgress, 0)
-            }
-            gsap.ticker.add(ticker)
-            ScrollTrigger.create({
-                trigger: containerRef.current,
-                start: "top bottom+=20%",
-                end: "bottom top-=20%",
-                scrub: true,
-                onUpdate: self => {
-                    scrollProgressRef.current = self.progress
-                },
-            })
-            return () => gsap.ticker.remove(ticker)
-        },
-        { dependencies: [autoScrollSpeed], scope: containerRef }
+      () => {
+        if (!swiperRef.current || !containerRef.current) return
+
+        let isDesktop = false
+        const mm = gsap.matchMedia()
+
+        mm.add("(min-width: 768px)", () => {
+          isDesktop = true
+          return () => {
+            isDesktop = false
+          }
+        })
+
+        const swiper = swiperRef.current
+
+        const ticker = () => {
+          progressRef.current += autoScrollSpeed
+
+          const scrollInfluence = isDesktop
+            ? gsap.parseEase("power2.out")(scrollProgressRef.current) * SCROLL_INFLUENCE
+            : 0
+
+          const scrollOffset = (isOdd ? -1 : 1) * scrollInfluence
+          const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
+
+          swiper.setProgress(totalProgress, 0)
+        }
+
+        gsap.ticker.add(ticker)
+
+        const trigger = ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top bottom+=20%",
+          end: "bottom top-=20%",
+          scrub: true,
+          onUpdate: self => {
+            scrollProgressRef.current = self.progress
+          },
+        })
+
+        return () => {
+          gsap.ticker.remove(ticker)
+          trigger.kill()
+          mm.revert()
+        }
+      },
+      { dependencies: [autoScrollSpeed], scope: containerRef }
     )
 
     return (

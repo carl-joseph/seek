@@ -18,7 +18,7 @@ export default function Journal({ journals }) {
                 {journals.map((journal, i) => (
                     <div className='fade--in' data-sal>
                         <Link key={i} to={`/journal/${journal.slug}`} className={`journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
-                            {journal.category?.title && <span className='f-20 gerstner fw-300 op-50'>{journal.category.title}</span>}
+                            {journal.category?.title && <span className='gerstner fw-300 op-50'>{journal.category.title}</span>}
                             <span className='h0'>{journal.previewTitle}</span>
                         </Link>
                     </div>
