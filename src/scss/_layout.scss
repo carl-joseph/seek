@@ -57,6 +57,9 @@
     line-height: 1.1;
     font-family: "Suisse Works", serif;
     font-weight: 400;
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
 }
 
 body {

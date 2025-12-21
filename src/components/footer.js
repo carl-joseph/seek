@@ -39,7 +39,7 @@ export default function Footer({ whiteBg = false }) {
                         <Link to='/information'>Information</Link>
                     </div>
                 </div>
-                <div className='flex gap-60'>
+                <div className='flex gap-60 m-hide'>
                     {info?.email && (<a className='op-link' href={`mailto:${info.email}`}>{info.email}</a>)}
                     <div className='flex gap-30'>
                         {info?.phone && (<a className='op-link' href={`tel:${info.phone}`}>{info.phone}</a>)}
