@@ -17,7 +17,7 @@ export default function Journals({ journals }) {
 function JournalCard({ journal }) {
     return (
         <Link to={`/journal/${journal.slug}`} className='link'>
-            <div className={`${getAspectRatioClass(journal.assetContent?.aspectRatio)} pos-rel overflow`}>
+            <div className={`${getAspectRatioClass(journal.assetContent?.aspectRatio)} pos-rel overflow image--zoom`}>
                 <MediaAsset video={journal.assetContent?.assetField?.video} image={journal.assetContent?.assetField?.image} />
             </div>
             <h3 className='mt10'>{journal.previewTitle}</h3>

@@ -13,13 +13,15 @@ export default function Journal({ journals }) {
 
     return (
         <div className='h-100vh pos-rel flex flex-col' onMouseMove={handleMouseMove}>
-            <div className='text-lg text-center p10'>Journal</div>
+            <div className='text-lg text-center p10 fade--in' data-sal>Journal</div>
             <div className='flex flex-col gap-40 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
-                    <Link key={i} to={`/journal/${journal.slug}`} className={`journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
-                        {journal.category?.title && <span className='f-20 gerstner fw-300 op-50'>{journal.category.title}</span>}
-                        <span className='h0'>{journal.previewTitle}</span>
-                    </Link>
+                    <div className='fade--in' data-sal>
+                        <Link key={i} to={`/journal/${journal.slug}`} className={`journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
+                            {journal.category?.title && <span className='f-20 gerstner fw-300 op-50'>{journal.category.title}</span>}
+                            <span className='h0'>{journal.previewTitle}</span>
+                        </Link>
+                    </div>
                 ))}
             </div>
             <CursorImage active={hoveredIndex !== null} asset={journals[hoveredIndex]?.assetContent?.assetField} aspectRatio={journals[hoveredIndex]?.assetContent?.aspectRatio} mousePos={mousePos}/>

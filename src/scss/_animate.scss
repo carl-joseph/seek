@@ -2,6 +2,18 @@
 ## Animation Styles
 --------------------------------------------------------------*/
 
+.image--zoom {
+    .bg-image {
+        transform: scale(1.02);
+        transition: 0.5s ease transform;
+    }
+    &:hover {
+        .bg-image {
+            transform: none;
+        }
+    }
+}
+
 /* ------------ Related Project ------------ */
 
 .project--hover {

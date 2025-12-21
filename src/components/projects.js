@@ -28,9 +28,7 @@ const ViewAll = () => {
     return (
         <>
             <Spacer />
-            <Link to='/projects' className='text-lg op-link inverse text-center link'>
-                View All Projects
-            </Link>
+            <div className='fade--in flex' data-sal><Link to='/projects' className='text-lg ma op-link inverse text-center link'>View All Projects</Link></div>
             <Spacer />
         </>
     )
@@ -42,7 +40,7 @@ function ProjectItem({ project, index }) {
     const progressRef = useRef(0)
     const scrollProgressRef = useRef(0)
     const isOdd = index % 2 !== 0
-    const SCROLL_INFLUENCE = 0.2
+    const SCROLL_INFLUENCE = 0.15
     const autoScrollSpeed = isOdd ? -0.00012 : 0.00008
     const doubledMedia = [...(project.previewMedia || []), ...(project.previewMedia || [])]
 
