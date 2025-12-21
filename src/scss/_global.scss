@@ -348,7 +348,7 @@ div.bg-image,
     inset: 0px;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: fixed !important;
     object-fit: cover;
 }
 
