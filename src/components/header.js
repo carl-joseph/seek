@@ -6,10 +6,10 @@ export default function Header({ title }) {
         <header className='masthead flex mt10 gap-10'>
             <div className='flex w-50 p10 text-lg gap-20'>
                 <Link className='link max-120 w-100' to='/'>Seek</Link>
-                <div className='ml60 flex gap-20'>
-                    <Link to='/projects'>Projects</Link>
-                    <Link to='/journal'>Journal</Link>
-                    <Link to='/information'>Information</Link>
+                <div className='ml60 flex gap-30'>
+                    <Link className='op-link' to='/projects'>Projects</Link>
+                    <Link className='op-link' to='/journal'>Journal</Link>
+                    <Link className='op-link' to='/information'>Information</Link>
                 </div>
             </div>
             {title && (

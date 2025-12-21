@@ -23,6 +23,8 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+/* ------------ General Styles ------------ */
+
 .link {
     text-decoration: none;
 }
@@ -43,11 +45,6 @@ a {
     font-weight: 300;
 }
 
-.underline {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
 /* ------------ Font Styles ------------ */
 
 .f-20 {
@@ -66,18 +63,16 @@ a {
     font-weight: 500;
 }
 
+.gerstner {
+  font-family: "Gerstner Programm FSL";
+}
+
 .text-lg {
   font-size: 18px;
   font-family: "Gerstner Programm FSL";
-  font-weight: 500;
-  line-height: 1;
   @media (max-width: 768px) {
     font-size: 15px;
   }   
-}
-
-.gerstner {
-  font-family: "Gerstner Programm FSL";
 }
 
 /* ------------ Grid Styles ------------ */
@@ -158,6 +153,10 @@ a {
 
 .gap-20 {
     gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
 }
 
 .gap-40 {
@@ -261,6 +260,10 @@ a {
 
 .pb10 {
     padding-bottom: 10px;
+}
+
+.pb20 {
+    padding-bottom:20px;
 }
 
 .pb-40 {

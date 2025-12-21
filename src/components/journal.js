@@ -22,15 +22,15 @@ export default function Journal({ journals }) {
                     </Link>
                 ))}
             </div>
-            {hoveredIndex !== null && journals[hoveredIndex]?.assetContent?.assetField && <CursorImage asset={journals[hoveredIndex].assetContent.assetField} aspectRatio={journals[hoveredIndex].assetContent.aspectRatio} mousePos={mousePos} />}
+            <CursorImage active={hoveredIndex !== null} asset={journals[hoveredIndex]?.assetContent?.assetField} aspectRatio={journals[hoveredIndex]?.assetContent?.aspectRatio} mousePos={mousePos}/>
         </div>
     )
 }
 
-function CursorImage({ asset, aspectRatio, mousePos }) {
+function CursorImage({ asset, aspectRatio, mousePos, active }) {
     return (
         <div
-            className='cursor-image'
+            className={`cursor-image ${active ? "active" : ""}`}
             style={{
                 left: mousePos.x,
                 top: mousePos.y + 40,
