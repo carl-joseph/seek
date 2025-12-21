@@ -1,18 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
+
 import { graphql } from "gatsby"
-import Seo from "../components/seo"
-import Layout from "../components/layout"
-import Projects from "../components/projects"
-import HeroBanner from "../components/heroBanner"
 import FeaturedProject from "../components/featuredProject"
-import TitleSection from "../components/titleSection"
-import MixedWork from "../components/mixedWork"
+import HeroBanner from "../components/heroBanner"
 import Journal from "../components/journal"
+import Layout from "../components/layout"
+import MixedWork from "../components/mixedWork"
+import Preloader from "../components/preloader"
+import Projects from "../components/projects"
+import Seo from "../components/seo"
 import Spacer from "../components/spacer"
+import TitleSection from "../components/titleSection"
 
 export default function IndexPage({ data: { page } }) {
+    const [isPreloading, setIsPreloading] = useState(true)
+
     return (
-        <Layout>
+        <Layout isPreloading={isPreloading}>
+            {isPreloading && <Preloader onComplete={() => setIsPreloading(false)} />}
             <HeroBanner image={page.heroImage} video={page.heroVideo} />
             <div className='bg-black pos-rel z-2'>
                 <TitleSection title={page.title} />

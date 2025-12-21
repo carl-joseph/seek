@@ -19,7 +19,7 @@ export default function MixedWork({ title, work }) {
         <div className='p10'>
             <h1 className='h1 mb-40'>{title}</h1>
             <div className='embla' ref={emblaRef}>
-                <div className='embla__container'>
+                <div className='embla-container'>
                     {doubledWork.map((item, i) => (
                         <WorkItem key={i} item={item} />
                     ))}
@@ -34,7 +34,7 @@ function WorkItem({ item }) {
     const aspectRatio = item.assetContent?.aspectRatio
 
     return (
-        <div className='embla__slide cursor-grab'>
+        <div className='embla-slide cursor-grab'>
             <div className={`${getAspectRatioClass(aspectRatio)} pos-rel overflow`}>
                 <MediaAsset video={asset?.video} image={asset?.image} alt={item.title} />
             </div>

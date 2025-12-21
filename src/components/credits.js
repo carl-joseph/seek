@@ -5,8 +5,8 @@ export default function Credits({ credits, content }) {
     if (!credits?.length && !content) return null
     return (
         <>
-            <div className='p10 grid-2 gap-10 mt20'>
-                <div className='gerstner f-15'>
+            <div className='p10 grid-2 m-flex m-flex-col-reverse gap-10 m-gap-40 mt20'>
+                <div className='gerstner f-15 '>
                     {(credits.length ? <p className='op-50'>Credits</p>:'')}
                     <div className='flex flex-col'>
                         {credits?.map((credit, i) => (

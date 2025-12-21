@@ -282,6 +282,11 @@ a {
     padding-top: 20px;
 }
 
+.py20 {
+    padding-block: 20px;
+
+}
+
 /* ------------ Position Styles ------------ */
 
 .pos-rel {
@@ -498,5 +503,35 @@ div.bg-image,
 .m-grid-2 {
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+.m-mb20 {
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+    }
+}
+
+.m-mb40 {
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
+}
+
+.m-flex{
+    @media (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.m-flex-col-reverse {
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+}
+
+.m-gap-40 {
+    @media (max-width: 768px) {
+        gap: 40px;
     }
 }

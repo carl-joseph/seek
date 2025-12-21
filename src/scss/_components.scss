@@ -53,12 +53,12 @@
     overflow: hidden;
 }
 
-.embla__container {
+.embla-container {
     display: flex;
     gap: 5px;
 }
 
-.embla__slide {
+.embla-slide {
     flex: 0 0 auto;
     width: calc(25% - 4px);
     &:last-child {
@@ -67,4 +67,105 @@
     @media (max-width: 768px) {
         width: calc(50% - 4px);
     }
+}
+
+/* ------------ Projects Filter ------------ */
+
+.projects-filter {
+    position: relative;
+}
+
+.projects-filter-trigger {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+.projects-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.projects-filter-scroll {
+    flex: 1;
+    min-width: 0;
+}
+
+.projects-filter-close {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 769px) {
+    .projects-filter-trigger {
+        display: none;
+    }
+
+    .projects-filter-close {
+        display: none;
+    }
+
+    .projects-filter-bar {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+    }
+
+    .projects-filter-scroll {
+        flex-wrap: wrap;
+        overflow: visible;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-filter-bar {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: translateX(20px);
+        pointer-events: none;
+    }
+
+    .projects-filter-bar.active {
+        pointer-events: auto;
+    }
+
+    .projects-filter-scroll {
+        overflow-x: auto;
+        padding-left: 10px;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+/* ------------ Footer ------------ */
+
+.footer-mobile-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+}
+
+.footer-mobile--copy {
+    grid-column: 1;
+    line-height: 1;
+}
+
+.footer-mobile-logo {
+    grid-column: 2;
 }

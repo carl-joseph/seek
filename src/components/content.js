@@ -50,7 +50,7 @@ function TextAndImage({ content, caption, asset, reverse }) {
             <div className={`ratio-2-3 bg-grey pos-rel overflow ${reverse ? "order-2 m-order-reset" : ""}`}>
                 <MediaAsset video={asset?.video} image={asset?.image} />
             </div>
-            <div className={`flex flex-col gap-40 ${reverse ? "order-1 m-order-reset" : ""}`}>
+            <div className={`flex flex-col m-mb20 gap-40 ${reverse ? "order-1 m-order-reset" : ""}`}>
                 <div className={caption ? "flex-1 " : ""}>
                     <h2 className='h2 sticky top-50'>{content}</h2>
                 </div>

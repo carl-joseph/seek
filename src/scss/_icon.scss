@@ -8,6 +8,14 @@
     left: 10px;
 }
 
+.footer-icon--mobile {
+    position: static;
+    left: auto;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+}
+
 .spin {
     animation: spin 10s linear infinite;
 }
