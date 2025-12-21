@@ -26,11 +26,11 @@ export default function Projects({ projects, alt }) {
 
 const ViewAll = () => {
     return (
-        <>
+        <div className='view-all'>
             <Spacer />
             <div className='fade--in flex' data-sal><Link to='/projects' className='text-lg ma op-link inverse text-center link'>View All Projects</Link></div>
             <Spacer />
-        </>
+        </div>
     )
 }
 
@@ -100,9 +100,11 @@ function ProjectItem({ project, index }) {
             <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} breakpoints={{ 0: { slidesPerView: 2 }, 768: { slidesPerView: 4 } }} spaceBetween={5} loop freeMode className='project-swiper'>
                 {doubledMedia.map((media, i) => (
                     <SwiperSlide key={i}>
-                        <div className={`${getAspectRatioClass(media.aspectRatio, "ratio-4-3")} pos-rel overflow`}>
-                            <MediaAsset video={media.assetField?.video} image={media.assetField?.image} />
-                        </div>
+                        <Link to={`/projects/${project.slug}`}>
+                            <div className={`${getAspectRatioClass(media.aspectRatio, "ratio-4-3")} pos-rel overflow`}>
+                                <MediaAsset video={media.assetField?.video} image={media.assetField?.image} />
+                            </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

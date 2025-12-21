@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+## Project Styles
+--------------------------------------------------------------*/
+
+.project-preloader {
+    inset: 0;
+    display: flex;
+    z-index: 10000;
+    position: fixed;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    padding: 10px;
+}
+
+.project-preloader-title {
+    max-width: 900px;    
+}

@@ -1,13 +1,13 @@
-import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import HeroBanner from "../components/heroBanner"
 import ProjectIntro from "../components/projectIntro"
 import RelatedProjects from "../components/relatedProjects"
+import { ProjectPreloader } from "../components/projectPreloader"
 import Content from "../components/content"
 import Credits from "../components/credits"
-import { ProjectPreloader } from "../components/projectPreloader"
 
 export default function Project({ data: { project, relatedProjects } }) {
     const [isPreloading, setIsPreloading] = useState(true)
@@ -15,7 +15,7 @@ export default function Project({ data: { project, relatedProjects } }) {
 
     return (
         <Layout title={project.title}>
-            {isPreloading & false && <ProjectPreloader text={project.preloaderText || project.title} onComplete={() => setIsPreloading(false)} />}
+            {isPreloading && <ProjectPreloader text={project.preloaderText || project.title} onComplete={() => setIsPreloading(false)} />}
             <HeroBanner image={project.heroAsset?.image} video={project.heroAsset?.video} />
             <div className='bg-black pos-rel z-2'>
                 <ProjectIntro introduction={project.introduction} client={project.client} service={project.service} sector={project.sector} year={project.year} />
