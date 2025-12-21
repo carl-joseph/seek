@@ -17,6 +17,7 @@ export default function Footer({ whiteBg = false }) {
             }
         }
     `)
+    
     const year = new Date().getFullYear()
 
     return (

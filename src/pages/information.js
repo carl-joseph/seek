@@ -13,7 +13,9 @@ export default function InformationPage({ data: { page } }) {
         <Layout>
             <Spacer />
             <Spacer />
-            <h1 className='h1 p10'>{page.title}</h1>
+            <h1 className='h1 p10 fade--in' data-sal>
+                {page.title}
+            </h1>
             <Spacer />
             <Spacer />
             <div className='p10 grid-2 gap-10'>
