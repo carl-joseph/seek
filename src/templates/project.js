@@ -15,7 +15,7 @@ export default function Project({ data: { project, relatedProjects } }) {
 
     return (
         <Layout title={project.title}>
-            {isPreloading && <ProjectPreloader text={project.preloaderText || project.title} onComplete={() => setIsPreloading(false)} />}
+            {isPreloading & false && <ProjectPreloader text={project.preloaderText || project.title} onComplete={() => setIsPreloading(false)} />}
             <HeroBanner image={project.heroAsset?.image} video={project.heroAsset?.video} />
             <div className='bg-black pos-rel z-2'>
                 <ProjectIntro introduction={project.introduction} client={project.client} service={project.service} sector={project.sector} year={project.year} />
