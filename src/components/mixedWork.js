@@ -8,9 +8,11 @@ import { getAspectRatioClass } from "./utils"
 export default function MixedWork({ title, work }) {
     const doubledWork = [...(work || []), ...(work || [])]
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+
     const [emblaRef] = useEmblaCarousel(
         { loop: true, dragFree: true },
-        [AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: false })]
+        [AutoScroll({ playOnInit: true, speed: isMobile ? 0.4 : 1, stopOnInteraction: false })]
     )
 
     if (!work?.length) return null
