@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from "react"
-import Projects from "./projects"
+import ProjectsGrid from "./projectsGrid"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { CloseIcon } from "./closeIcon"
@@ -57,7 +57,7 @@ export default function ProjectsFilter({ projects }) {
                 return () => tl.kill()
             }
 
-            tl.to(barRef.current, { opacity: 0, x:0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
+            tl.to(barRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
 
             return () => tl.kill()
         },
@@ -84,8 +84,8 @@ export default function ProjectsFilter({ projects }) {
                     </button>
                 </div>
             </div>
-            <div ref={listRef}>
-                <Projects projects={filteredProjects} alt />
+            <div ref={listRef} className=''>
+                <ProjectsGrid projects={filteredProjects} />
             </div>
         </>
     )

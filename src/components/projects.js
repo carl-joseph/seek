@@ -12,14 +12,14 @@ import "swiper/css"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
-export default function Projects({ projects, alt }) {
+export default function Projects({ projects }) {
     if (!projects?.length) return null
     return (
         <div className='flex flex-col gap-40'>
             {projects.map((project, i) => (
                 <ProjectItem key={i} project={project} index={i} />
             ))}
-            {!alt && <ViewAll />}
+            <ViewAll />
         </div>
     )
 }

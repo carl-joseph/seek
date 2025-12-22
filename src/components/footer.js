@@ -43,9 +43,9 @@ export default function Footer({ whiteBg = false }) {
                 <div className='flex gap-20'>
                     <p className='max-120 w-100'>© Seek, {year}</p>
                     <div className='ml60 flex gap-30'>
-                        <Link to='/projects'>Projects</Link>
-                        <Link to='/journal'>Journal</Link>
-                        <Link to='/information'>Information</Link>
+                        <Link to='/projects' className="op-link">Projects</Link>
+                        <Link to='/journal' className="op-link">Journal</Link>
+                        <Link to='/information' className="op-link">Information</Link>
                     </div>
                 </div>
                 <div className='flex gap-60 m-hide'>
