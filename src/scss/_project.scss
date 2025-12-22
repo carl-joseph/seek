@@ -77,6 +77,18 @@
 }
 
 @media (max-width: 768px) {
+    .projects-filter {
+        position: relative;
+        &:after {
+            content:'';
+            width: 50px;
+            height: 20px;
+            background: linear-gradient(to right, transparent 0%, black 100%);
+            position: absolute;
+            right: 35px;
+            top: 10px;
+        }
+    }
     .projects-filter-bar {
         position: absolute;
         pointer-events: none;
@@ -91,21 +103,13 @@
 
     .projects-filter-scroll {
         overflow-x: auto;
+        overflow-y: hidden;
         padding-left: 10px;
-        flex-wrap: nowrap;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         position: relative;
-        &:after {
-            content:'';
-            width: 50px;
-            height: 20px;
-            background: linear-gradient(to right, transparent 0%, #000 100%);
-            position: absolute;
-            right: 0px;
-            top: 0px;
-        }
+        flex-wrap: nowrap;
         &::-webkit-scrollbar {
             display: none;
         }

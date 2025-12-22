@@ -10,7 +10,7 @@ export default function Journal({ data: { journal } }) {
     return (
         <Layout whiteBg>
             <Spacer />
-            <Spacer />
+            <Spacer className='m-hide' />
             <JournalHero title={journal.title} category={journal.category?.title} asset={journal.heroAsset} />
             <ContentBlocks blocks={journal.contentBlocks} />
         </Layout>
