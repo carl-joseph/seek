@@ -1,0 +1,18 @@
+/*--------------------------------------------------------------
+## Footer Styles
+--------------------------------------------------------------*/
+
+.footer-mobile-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+}
+
+.footer-mobile--copy {
+    grid-column: 1;
+    line-height: 1;
+}
+
+.footer-mobile-logo {
+    grid-column: 2;
+}

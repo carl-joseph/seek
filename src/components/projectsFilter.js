@@ -57,7 +57,7 @@ export default function ProjectsFilter({ projects }) {
                 return () => tl.kill()
             }
 
-            tl.to(barRef.current, { opacity: 0, x: 20, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
+            tl.to(barRef.current, { opacity: 0, x:0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
 
             return () => tl.kill()
         },

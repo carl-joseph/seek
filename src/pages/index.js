@@ -77,7 +77,9 @@ export const query = graphql`
                 title
                 caption
                 buttonText
-                buttonLink
+                projectLink {
+                    slug
+                }
                 assetField {
                     image {
                         gatsbyImageData
@@ -89,7 +91,9 @@ export const query = graphql`
                 title
                 caption
                 buttonText
-                buttonLink
+                projectLink {
+                    slug
+                }
                 assetField {
                     image {
                         gatsbyImageData
