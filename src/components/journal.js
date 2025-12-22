@@ -19,7 +19,7 @@ export default function Journal({ journals }) {
                     <div className='fade--in' data-sal>
                         <Link key={i} to={`/journal/${journal.slug}`} className={`journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>
                             {journal.category?.title && <span className='gerstner fw-300 op-50'>{journal.category.title}</span>}
-                            <span className='h0'>{journal.previewTitle}</span>
+                            <span className='h0 large'>{journal.previewTitle}</span>
                         </Link>
                     </div>
                 ))}
