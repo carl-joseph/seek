@@ -4,24 +4,19 @@
 
 .masthead {
     width: 100%;
-    max-width: 100vw;
     z-index: 12;
-    position: fixed;
+    max-width: 100vw;
     mix-blend-mode: difference;
+    position: fixed;
     left: 0px;
     top: 0px;
 }
 
-.masthead-menu-trigger,
-.masthead-mobile-nav {
+.masthead-menu-trigger, .masthead-mobile-nav {
     display: none;
 }
 
 @media (max-width: 768px) {
-    .masthead-left {
-        width: 100%;
-    }
-
     .masthead-title {
         display: none;
     }
@@ -45,25 +40,24 @@
     .masthead-menu-trigger {
         display: block;
         position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 0;
-        border: 0;
         background: transparent;
         color: inherit;
+        right: 10px;
+        padding: 0;
+        top: 10px;
+        border: 0;
     }
 
     .masthead-mobile-nav {
-        display: flex;
-        position: absolute;
         top: 10px;
         left: 10px;
         right: 10px;
+        display: flex;
+        position: absolute;
         align-items: center;
         justify-content: space-between;
-        opacity: 0;
-        transform: translateX(20px);
         pointer-events: none;
+        opacity: 0;
     }
 
     .masthead-mobile-nav.active {
@@ -76,16 +70,15 @@
 
     .masthead-mobile-close {
         border: 0;
-        background: transparent;
-        color: inherit;
         padding: 0;
         display: flex;
+        color: inherit;
         align-items: center;
         justify-content: center;
+        background: transparent;
     }
 
-    .masthead--menu-open .masthead-seek,
-    .masthead--menu-open .masthead-menu-trigger {
+    .masthead--menu-open .masthead-seek, .masthead--menu-open .masthead-menu-trigger {
         pointer-events: none;
     }
 }

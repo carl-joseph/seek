@@ -52,7 +52,7 @@ export default function Header({ title, isPreloading }) {
                 return () => tl.kill()
             }
 
-            tl.to(mobileNavRef.current, { opacity: 0, x: 20, duration: 0.35, ease: "power2.inOut" }).to([seekRef.current, menuRef.current], { opacity: 1, duration: 0.25 })
+            tl.to(mobileNavRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to([seekRef.current, menuRef.current], { opacity: 1, duration: 0.25 })
 
             return () => tl.kill()
         },
@@ -61,10 +61,8 @@ export default function Header({ title, isPreloading }) {
 
     return (
         <header className={`masthead flex mt10 gap-10 ${isPreloading ? "masthead--preloading" : ""} ${isMenuOpen ? "masthead--menu-open" : ""}`}>
-            <div className='masthead-left flex w-50 p10 text-lg gap-20'>
-                <Link className={`masthead-seek link max-120 w-100 ${isPreloading ? "preloader-seek" : ""}`} to='/' ref={seekRef}>
-                    Seek
-                </Link>
+            <div className='masthead-left m-100 flex w-50 p10 text-lg gap-20'>
+                <Link className={`masthead-seek link max-120 w-100 ${isPreloading ? "preloader-seek" : ""}`} to='/' ref={seekRef}>Seek</Link>
                 <div className='masthead-desktop-links ml60 flex gap-30'>{isPreloading ? <div className='office-text'>Office of Design</div> : <NavLinks intro={shouldIntroNav} />}</div>
             </div>
             {title && (
@@ -103,15 +101,9 @@ function NavLinks({ intro, className = "", onNavigate = null }) {
 
     return (
         <div className={`nav-links flex gap-30 ${isIntro ? "nav-links--intro" : ""} ${className}`} ref={navRef}>
-            <Link className='op-link' to='/projects' onClick={onNavigate}>
-                Projects
-            </Link>
-            <Link className='op-link' to='/journal' onClick={onNavigate}>
-                Journal
-            </Link>
-            <Link className='op-link' to='/information' onClick={onNavigate}>
-                Information
-            </Link>
+            <Link className='op-link' to='/projects' onClick={onNavigate}>Projects</Link>
+            <Link className='op-link' to='/journal' onClick={onNavigate}>Journal</Link>
+            <Link className='op-link' to='/information' onClick={onNavigate}>Information</Link>
         </div>
     )
 }

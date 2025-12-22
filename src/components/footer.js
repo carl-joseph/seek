@@ -83,15 +83,9 @@ function FooterMobile({ year, info, whiteBg }) {
         <div className='footer-mobile p10 pb20 mta fade--in m-show flex-col gap-0' data-sal>
             <div className='footer-mobile-grid grid-2 m-grid-2 gap-0'>
                 <div className='flex flex-col gap-0'>
-                    <Link className='op-link' to='/projects'>
-                        Projects
-                    </Link>
-                    <Link className='op-link' to='/journal'>
-                        Journal
-                    </Link>
-                    <Link className='op-link' to='/information'>
-                        Information
-                    </Link>
+                    <Link className='op-link' to='/projects'>Projects</Link>
+                    <Link className='op-link' to='/journal'>Journal</Link>
+                    <Link className='op-link' to='/information'>Information</Link>
                 </div>
                 <div className='flex flex-col gap-0'>
                     {info?.email && (
