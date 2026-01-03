@@ -7,7 +7,7 @@ import Journals from "../components/journals"
 
 export default function JournalPage({ data: { journals } }) {
     return (
-        <Layout whiteBg>
+        <Layout>
             <Spacer />
             <Spacer />
             <Journals journals={journals.nodes} />

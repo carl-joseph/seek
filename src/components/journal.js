@@ -12,9 +12,9 @@ export default function Journal({ journals }) {
     if (!journals?.length) return null
 
     return (
-        <div className='h-100vh pos-rel flex flex-col' onMouseMove={handleMouseMove}>
-            <div className='text-lg text-center p10 fade--in' data-sal>Journal</div>
-            <div className='flex flex-col gap-40 p10 text-center align-center justify-center h-100 journal-titles'>
+        <div className='mh-100vh pos-rel flex flex-col' onMouseMove={handleMouseMove}>
+            <div className='text-lg text-center mb40 p10 fade--in' data-sal>Journal</div>
+            <div className='flex flex-col mb40 gap-40 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
                     <div className='fade--in' data-sal>
                         <Link key={i} to={`/journal/${journal.slug}`} className={`journal-title ${hoveredIndex === i ? "active" : ""}`} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)}>

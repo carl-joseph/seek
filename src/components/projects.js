@@ -57,19 +57,14 @@ function ProjectItem({ project, index }) {
             isDesktop = false
           }
         })
-
         const swiper = swiperRef.current
-
         const ticker = () => {
           progressRef.current += autoScrollSpeed
-
           const scrollInfluence = isDesktop
             ? gsap.parseEase("power2.out")(scrollProgressRef.current) * SCROLL_INFLUENCE
             : 0
-
           const scrollOffset = (isOdd ? -1 : 1) * scrollInfluence
           const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
-
           swiper.setProgress(totalProgress, 0)
         }
 

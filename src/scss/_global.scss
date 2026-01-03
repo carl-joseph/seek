@@ -441,12 +441,16 @@ div.bg-image, .bg-image {
     height: 100%;
 }
 
+.h-80vh {
+    height: 80vh;
+}
+
 .h-100vh {
     height: 100svh;
 }
 
-.h-80vh {
-    height: 80vh;
+.mh-100vh {
+    min-height: 100svh;
 }
 
 /* ------------ Max Styles ------------ */
