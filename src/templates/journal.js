@@ -99,6 +99,9 @@ export const query = graphql`
                     title
                     content
                 }
+                ... on DatoCmsSpacer {
+                    __typename
+                }
                 ... on DatoCmsContentImageBlock {
                     __typename
                     title

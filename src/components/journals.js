@@ -6,7 +6,7 @@ import { getAspectRatioClass } from "./utils"
 export default function Journals({ journals }) {
     if (!journals?.length) return null
     return (
-        <div className='p10 grid-2 gap-10 row-gap-40'>
+        <div className='p10 grid grid-4 gap-10 row-80'>
             {journals.map((journal, i) => (
                 <JournalCard key={i} journal={journal} />
             ))}

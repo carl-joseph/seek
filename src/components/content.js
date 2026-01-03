@@ -28,6 +28,8 @@ function ContentBlock({ block }) {
             return <TitleContent title={block.title} content={block.content} />
         case "DatoCmsContentImageBlock":
             return <ContentImage title={block.title} content={block.content} asset={block.asset} />
+        case "DatoCmsSpacer":
+            return <Spacer />
         default:
             return null
     }
@@ -92,8 +94,8 @@ function TwoImages({ imageOne, imageTwo }) {
 function TitleContent({ title, content }) {
     return (
         <div className='grid-2 gap-10  p10 pt0 pb0'>
-            <h2 className='h2 mt10 op-50'>{title}</h2>
-            <div className='f-20 mt10 gerstner fw-300 flex flex-col gap-20' dangerouslySetInnerHTML={{ __html: content }} />
+            <h2 className='h2 mt10'>{title}</h2>
+            <div className='f-20 mt10 gerstner fw-300 flex flex-col gap-20 mb40' dangerouslySetInnerHTML={{ __html: content }} />
         </div>
     )
 }

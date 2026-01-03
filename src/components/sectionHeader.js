@@ -4,9 +4,9 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function SectionHeader({ title, caption, buttonText, buttonLink }) {
     return (
-        <div className='flex text-lg p10 py20'>
-            <Link to={buttonLink || "#"} className='max-300 m-wa w-100'>{title}</Link>
-            {caption && <div className='max-300 m-hide  w-100'>{caption}</div>}
+        <div className='flex gap-20 text-lg p10 py20'>
+            <Link to={buttonLink || "#"} className='max-180 m-wa w-100'>{title}</Link>
+            {caption && <div className='max-300 m-hide w-100'>{caption}</div>}
             <Link to={buttonLink || "#"} className='link mla btn-arrow max-300 w-100 m-wa justify-end'>
                 {buttonText} <Arrow />
             </Link>

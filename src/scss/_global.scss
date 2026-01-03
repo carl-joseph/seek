@@ -87,7 +87,6 @@ a {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
@@ -101,6 +100,10 @@ a {
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 /* ------------ Order Styles ------------ */
@@ -183,6 +186,10 @@ a {
 
 .row-gap-60 {
     row-gap: 60px;
+}
+
+.row-80 {
+    row-gap: 80px;
 }
 
 /* ------------ Margin Styles ------------ */
@@ -450,6 +457,10 @@ div.bg-image, .bg-image {
 
 .max-120 {
     max-width: 120px;
+}
+
+.max-180 {
+    max-width: 180px;
 }
 
 .max-280 {

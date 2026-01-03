@@ -1,29 +1,29 @@
 import React from "react"
 
 export default function ProjectIntro({ introduction, client, service, sector, year }) {
-    return (
-        <div className='h-80vh flex flex-col p10'>
-            <h1 className='h1'>{introduction}</h1>
-            <div className='max-350 mta grid-2 m-grid-2 gap-0 gerstner op-50'>
-                <p className='f-500'>Client</p>
-                <p className="fw-300">{client}</p>
-                <p className='f-500'>Service</p>
-                <p className="fw-300">{service}</p>
-                <p className='f-500'>Sector</p>
-                <p className="fw-300">
-                    {Array.isArray(sector) 
-                        ? sector.map((item, i) => (
-                            <span key={item.title}>
-                                {item.title}
-                                {i < sector.length - 1 && ", "}
-                            </span>
-                        ))
-                        : sector?.title
-                    }
-                </p>
-                <p className='f-500'>Year</p>
-                <p className="fw-300">{year}</p>
-            </div>
-        </div>
-    )
+  const rows = [
+    ["Client", client],
+    ["Service", service],
+    ["Sector", <Categories sector={sector} />],
+    ["Year", year],
+  ]
+  return (
+    <div className='h-80vh flex flex-col p10'>
+      <h1 className='h1'>{introduction}</h1>
+      <div className='max-350 mta flex flex-col gerstner op-50'>
+        {rows.map(([label, value]) => (
+          <div key={label} className='flex gap-20'>
+            <p className='f-500 w-100 max-120'>{label}</p>
+            <p className='fw-300 ml60'>{value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const Categories = ({ sector }) => {
+  if (!sector) return null
+  if (Array.isArray(sector)) return sector.map(s => s?.title).filter(Boolean).join(", ")
+  return sector?.title || null
 }
