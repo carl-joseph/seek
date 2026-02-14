@@ -51,6 +51,20 @@
 
 }
 
+/* ------------ Project Swiper Styles ------------ */
+
+.project-swiper .swiper-slide {
+    height: 350px;
+    width: auto !important;
+    @media (max-width: 768px) {
+        height: 250px;
+    }
+    [class*="ratio-"] {
+        width: auto;
+        height: 100%;
+    }
+}
+
 /* ------------ Embla Styles ------------ */
 
 .embla {

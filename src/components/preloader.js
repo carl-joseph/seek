@@ -36,7 +36,6 @@ export default function Preloader({ onComplete }) {
             .to(taglineRef.current, { opacity: 1, duration: 0.5 })
             .to(taglineRef.current, { opacity: 0, duration: 0.4 }, "+=0.8")
             .to(containerRef.current, { opacity: 0, duration: 0.5 })
-            .to(officeEl, { opacity: 0, duration: 0.3 })
             .call(() => {
                 revertSplit()
                 if (onComplete) onComplete()

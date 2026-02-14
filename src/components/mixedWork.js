@@ -19,14 +19,14 @@ export default function MixedWork({ title, work }) {
 
     return (
         <div className='p10'>
-            <h1 className='h1 mb-40'>{title}</h1>
-            <div className='embla' ref={emblaRef}>
+            <h1 className='h1 balance mb-40'>{title}</h1>
+            {/* <div className='embla' ref={emblaRef}>
                 <div className='embla-container'>
                     {doubledWork.map((item, i) => (
                         <WorkItem key={i} item={item} />
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

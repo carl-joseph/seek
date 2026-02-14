@@ -45,10 +45,14 @@ a {
     font-weight: 300;
 }
 
+.balance {
+    text-wrap: balance;
+}
+
 /* ------------ Font Styles ------------ */
 
 .f-20 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .f-18 {
@@ -56,7 +60,7 @@ a {
 }
 
 .f-15 {
-  font-size: 15px;
+    font-size: 15px;
 }
 
 .f-500 {
@@ -64,15 +68,15 @@ a {
 }
 
 .gerstner {
-  font-family: "Gerstner Programm FSL";
+    font-family: "Gerstner Programm FSL";
 }
 
 .text-lg {
-  font-size: 18px;
-  font-family: "Gerstner Programm FSL";
-  @media (max-width: 768px) {
-    font-size: 15px;
-  }   
+    font-size: 18px;
+    font-family: "Gerstner Programm FSL";
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
 }
 
 /* ------------ Grid Styles ------------ */
@@ -140,6 +144,10 @@ a {
 
 .align-center {
     align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
 }
 
 .justify-center {
@@ -223,27 +231,26 @@ a {
 }
 
 .mt20 {
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 .ml60 {
     margin-left: 60px;
 }
 
-
-
-.mb-20,.mb20 {
+.mb-20,
+.mb20 {
     margin-bottom: 20px;
 }
 
-.mb-40,.mb40 {
+.mb-40,
+.mb40 {
     margin-bottom: 40px;
 }
 
 .mb10 {
     margin-bottom: 10px;
 }
-
 
 /* ------------ Padding Styles ------------ */
 
@@ -263,7 +270,7 @@ a {
     padding: 40px;
 }
 
-.pl10{
+.pl10 {
     padding-left: 10px;
 }
 
@@ -284,7 +291,7 @@ a {
 }
 
 .pb20 {
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
 .pb-40 {
@@ -305,7 +312,6 @@ a {
 
 .py20 {
     padding-block: 20px;
-
 }
 
 /* ------------ Position Styles ------------ */
@@ -341,12 +347,12 @@ a {
 
 .bg-light {
     .bg-grey {
-        background-color: rgba(0,0,0,.1);
+        background-color: rgba(0, 0, 0, 0.1);
     }
 }
 
 .bg-light {
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
 }
 
 .text-black {
@@ -355,7 +361,8 @@ a {
 
 /* ------------ Image Styles ------------ */
 
-div.bg-image, .bg-image {
+div.bg-image,
+.bg-image {
     left: 0px;
     top: 0px;
     width: 100%;
@@ -439,6 +446,10 @@ div.bg-image, .bg-image {
 
 .h-100 {
     height: 100%;
+}
+
+.h-30vh {
+    height: 30vh;
 }
 
 .h-80vh {
@@ -546,7 +557,7 @@ div.bg-image, .bg-image {
     }
 }
 
-.m-flex{
+.m-flex {
     @media (max-width: 768px) {
         display: flex;
     }
@@ -560,7 +571,7 @@ div.bg-image, .bg-image {
 
 .m-gap-5 {
     @media (max-width: 768px) {
-        gap:5px;
+        gap: 5px;
     }
 }
 

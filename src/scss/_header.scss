@@ -12,7 +12,19 @@
     top: 0px;
 }
 
-.masthead-seek, .masthead-menu-trigger {
+.masthead-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.25s ease;
+}
+
+.masthead-right {
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.masthead-menu-trigger {
     transition: opacity 0.25s ease;
 }
 
@@ -21,6 +33,10 @@
 }
 
 @media (max-width: 768px) {
+    .masthead-right {
+        display: none;
+    }
+
     .masthead-menu-trigger {
         position: absolute;
         background: transparent;
@@ -48,7 +64,6 @@
         pointer-events: auto;
     }
 
-    .masthead--menu-open .masthead-seek,
     .masthead--menu-open .masthead-menu-trigger {
         opacity: 0;
         pointer-events: none;

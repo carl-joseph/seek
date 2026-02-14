@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react"
 import { FreeMode } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import SectionHeader, { MediaAsset } from "./sectionHeader"
+import SectionHeader, { Arrow, MediaAsset } from "./sectionHeader"
 import { getAspectRatioClass } from "./utils"
 import Spacer from "./spacer"
 import gsap from "gsap"
@@ -28,7 +28,10 @@ const ViewAll = () => {
     return (
         <div className='view-all'>
             <Spacer />
-            <div className='fade--in flex' data-sal><Link to='/projects' className='text-lg ma op-link inverse text-center link'>View All Projects</Link></div>
+            <div className='fade--in flex gap-20 text-lg p10' data-sal>
+                <div className='max-180 w-100 m-hide'></div>
+                <Link to='/projects' className='link btn-arrow'>View All Projects <Arrow /></Link>
+            </div>
             <Spacer />
         </div>
     )
@@ -92,7 +95,7 @@ function ProjectItem({ project, index }) {
     return (
         <div ref={containerRef} className='bt-1'>
             <SectionHeader title={project.previewTitle} caption={project.previewDescription} buttonText='View Brand' buttonLink={`/projects/${project.slug}`} />
-            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView={4} breakpoints={{ 0: { slidesPerView: 2 }, 768: { slidesPerView: 4 } }} spaceBetween={5} loop freeMode className='project-swiper'>
+            <Swiper onSwiper={swiper => (swiperRef.current = swiper)} modules={[FreeMode]} slidesPerView='auto' spaceBetween={5} loop freeMode className='project-swiper'>
                 {doubledMedia.map((media, i) => (
                     <SwiperSlide key={i}>
                         <Link to={`/projects/${project.slug}`}>

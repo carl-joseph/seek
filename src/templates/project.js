@@ -14,7 +14,7 @@ export default function Project({ data: { project, relatedProjects } }) {
     const shuffledProjects = relatedProjects.nodes.sort(() => Math.random() - 0.5).slice(0, 2)
 
     return (
-        <Layout title={project.title}>
+        <Layout>
             {isPreloading && <ProjectPreloader text={project.preloaderText || project.title} onComplete={() => setIsPreloading(false)} />}
             <HeroBanner image={project.heroAsset?.image} video={project.heroAsset?.video} />
             <div className='bg-black pos-rel z-2'>

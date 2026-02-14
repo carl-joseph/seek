@@ -21,8 +21,10 @@ export default function Footer({ whiteBg = false }) {
     const year = new Date().getFullYear()
 
     return (
-        <footer className={`h-100vh flex pos-rel z-2 flex-col gerstner ${whiteBg ? "bg-light text-black" : "bg-black"}`}>
-            <div className='flex pos-rel overflow align-center justify-center h-100'>
+        <footer className={`flex pos-rel z-2 flex-col gerstner ${whiteBg ? "bg-light text-black" : "bg-black"}`}>
+            <Spacer/>
+            <Spacer/>
+            {/* <div className='flex pos-rel overflow align-center justify-center h-100'>
                 <div className='text-center flex flex-col gap-10'>
                     <h1 className='h0 large fade--in' data-sal>
                         {cta?.title || "Contact Us"}
@@ -38,7 +40,7 @@ export default function Footer({ whiteBg = false }) {
                 <div className='footer-icon fade--in m-hide' data-sal>
                     <FooterLogo whiteBg={whiteBg} />
                 </div>
-            </div>
+            </div> */}
             <div className='p10 pb20 mta grid-2 gap-10 fade--in m-hide' data-sal>
                 <div className='flex gap-20'>
                     <p className='max-120 w-100'>© Seek, {year}</p>

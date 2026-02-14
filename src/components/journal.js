@@ -12,7 +12,7 @@ export default function Journal({ journals }) {
     if (!journals?.length) return null
 
     return (
-        <div className='mh-100vh pos-rel flex flex-col' onMouseMove={handleMouseMove}>
+        <div className='mh-100vh pos-rel flex flex-col align-center justify-center' onMouseMove={handleMouseMove}>
             <div className='text-lg text-center mb40 p10 fade--in' data-sal>Journal</div>
             <div className='flex flex-col mb40 gap-40 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
