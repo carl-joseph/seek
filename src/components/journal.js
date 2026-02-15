@@ -13,7 +13,9 @@ export default function Journal({ journals }) {
 
     return (
         <div className='mh-100vh pos-rel flex flex-col align-center justify-center' onMouseMove={handleMouseMove}>
-            <div className='text-lg text-center mb40 p10 fade--in' data-sal>Journal</div>
+            <div className='text-lg text-center mb40 p10 fade--in' data-sal>
+                Journal
+            </div>
             <div className='flex flex-col mb40 gap-40 p10 text-center align-center justify-center h-100 journal-titles'>
                 {journals.map((journal, i) => (
                     <div className='fade--in' data-sal>
@@ -24,7 +26,7 @@ export default function Journal({ journals }) {
                     </div>
                 ))}
             </div>
-            <CursorImage active={hoveredIndex !== null} asset={journals[hoveredIndex]?.assetContent?.assetField} aspectRatio={journals[hoveredIndex]?.assetContent?.aspectRatio} mousePos={mousePos}/>
+            <CursorImage active={hoveredIndex !== null} asset={journals[hoveredIndex]?.assetContent?.assetField} aspectRatio={journals[hoveredIndex]?.assetContent?.aspectRatio} mousePos={mousePos} />
         </div>
     )
 }
@@ -33,11 +35,7 @@ function CursorImage({ asset, aspectRatio, mousePos, active }) {
     return (
         <div
             className={`cursor-image ${active ? "active" : ""}`}
-            style={{
-                left: mousePos.x,
-                top: mousePos.y + 40,
-                transform: "translateX(-50%)",
-            }}>
+            style={{ left: mousePos.x, top: mousePos.y + 40, transform: "translateX(-50%)",}}>
             <div className={`${getAspectRatioClass(aspectRatio)} pos-rel overflow`}>
                 <MediaAsset video={asset?.video} image={asset?.image} />
             </div>

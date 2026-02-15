@@ -89,6 +89,10 @@
             top: 10px;
         }
     }
+
+    .bg-light .projects-filter:after {
+        background: linear-gradient(to right, transparent 0%, #f2f2f2 100%);
+    }
     .projects-filter-bar {
         position: absolute;
         pointer-events: none;

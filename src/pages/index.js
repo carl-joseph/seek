@@ -27,7 +27,6 @@ export default function IndexPage({ data: { page } }) {
                 <FeaturedProject {...page.featuredProjectTwo} />
                 <Spacer />
                 <Spacer />
-                <MixedWork title={page.mixedTitle} work={page.mixedWork} />
             </div>
         </Layout>
     )

@@ -16,13 +16,13 @@ const SCROLL_OPTIONS = {
     smoothTouch: false,
 }
 
-export default function Layout({ children, whiteBg = false, isPreloading = false }) {
+export default function Layout({ children, whiteBg = false, isPreloading = false, showCta = false }) {
     return (
         <ReactLenis root options={SCROLL_OPTIONS}>
             <Header isPreloading={isPreloading} />
             <PageTransition>
                 <main className={whiteBg ? "bg-light text-black" : ""}>{children}</main>
-                <Footer whiteBg={whiteBg} />
+                <Footer whiteBg={whiteBg} showCta={showCta} />
             </PageTransition>
         </ReactLenis>
     )

@@ -56,7 +56,7 @@ function TextAndImage({ content, caption, asset, reverse }) {
                 <div className={caption ? "flex-1 " : ""}>
                     <h2 className='h2 sticky top-50'>{content}</h2>
                 </div>
-                {caption && <p className='f-20' dangerouslySetInnerHTML={{ __html: caption }} />}
+                {caption && <p className='f-20 paragraph balance' dangerouslySetInnerHTML={{ __html: caption }} />}
             </div>
         </div>
     )
@@ -95,7 +95,7 @@ function TitleContent({ title, content }) {
     return (
         <div className='grid-2 gap-10  p10 pt0 pb0'>
             <h2 className='h2 mt10'>{title}</h2>
-            <div className='f-20 mt10 gerstner fw-300 flex flex-col gap-20 mb40' dangerouslySetInnerHTML={{ __html: content }} />
+            <div className='f-20 mt10 paragraph fw-300 flex flex-col gap-20 mb40' dangerouslySetInnerHTML={{ __html: content }} />
         </div>
     )
 }
@@ -107,7 +107,7 @@ function ContentImage({ title, content, asset }) {
             <div className='grid-2 gap-10'>
                 <div />
                 <div className="flex flex-col gap-40">
-                    <div className='f-20 flex flex-col gap-20' dangerouslySetInnerHTML={{ __html: content }} />
+                    <div className='f-20 paragraph flex flex-col gap-20' dangerouslySetInnerHTML={{ __html: content }} />
                     <div className={`${getAspectRatioClass(asset?.aspectRatio)} bg-grey pos-rel overflow`}>
                         <MediaAsset video={asset?.assetField?.video} image={asset?.assetField?.image} />
                     </div>

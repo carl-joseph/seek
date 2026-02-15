@@ -3,14 +3,16 @@ import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import Spacer from "../components/spacer"
-import Journals from "../components/journals"
+import JournalsFilter from "../components/journalsFilter"
 
 export default function JournalPage({ data: { journals } }) {
     return (
         <Layout whiteBg>
             <Spacer />
             <Spacer />
-            <Journals journals={journals.nodes} />
+            <JournalsFilter journals={journals.nodes} />
+            <Spacer />
+            <Spacer />
         </Layout>
     )
 }
@@ -23,6 +25,10 @@ export const query = graphql`
             nodes {
                 slug
                 previewTitle
+                date
+                category {
+                    title
+                }
                 assetContent {
                     aspectRatio
                     assetField {

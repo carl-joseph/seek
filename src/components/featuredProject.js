@@ -9,7 +9,7 @@ export default function FeaturedProject({ title, caption, buttonText, projectLin
             <div className='flex gap-20 text-lg p10 py20'>
                 <div className='max-180 w-100 m-hide'></div>
                 <div className='max-300 w-100'>{caption}</div>
-                <Link to={link} className='link mla btn-arrow max-300 w-100 m-wa justify-end'>
+                <Link to={link} className='link mla btn-arrow max-300 w-100 m-wa justify-end shrink-0'>
                     {buttonText} <Arrow />
                 </Link>
             </div>

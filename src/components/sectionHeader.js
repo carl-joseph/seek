@@ -17,7 +17,7 @@ export default function SectionHeader({ title, caption, buttonText, buttonLink }
 export function Arrow() {
     return (
         <svg width='12' height='14' viewBox='0 0 14 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
-            <path d='M14.0098 8.08838L0 16.1769L0 0L14.0098 8.08838Z' fill='white' />
+            <path d='M14.0098 8.08838L0 16.1769L0 0L14.0098 8.08838Z' fill='currentColor' />
         </svg>
     )
 }

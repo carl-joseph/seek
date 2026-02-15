@@ -4,15 +4,19 @@ import Seo from "../components/seo"
 import Layout from "../components/layout"
 import ContentBlocks from "../components/content"
 import JournalHero from "../components/journalHero"
+import RelatedJournals from "../components/relatedJournals"
 import Spacer from "../components/spacer"
 
-export default function Journal({ data: { journal } }) {
+export default function Journal({ data: { journal, relatedJournals } }) {
+    const shuffled = relatedJournals.nodes.sort(() => Math.random() - 0.5).slice(0, 2)
+
     return (
-        <Layout whiteBg>
+        <Layout whiteBg showCta>
             <Spacer />
             <Spacer className='m-hide' />
             <JournalHero title={journal.title} category={journal.category?.title} asset={journal.heroAsset} />
             <ContentBlocks blocks={journal.contentBlocks} />
+            <RelatedJournals journals={shuffled} />
         </Layout>
     )
 }
@@ -116,6 +120,29 @@ export const query = graphql`
                                     }
                                     video
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        relatedJournals: allDatoCmsJournal(filter: { slug: { ne: $slug } }) {
+            nodes {
+                previewTitle
+                slug
+                date
+                category {
+                    title
+                }
+                assetContent {
+                    ... on DatoCmsMediaBlock {
+                        aspectRatio
+                        assetField {
+                            ... on DatoCmsAssetBlock {
+                                image {
+                                    gatsbyImageData
+                                }
+                                video
                             }
                         }
                     }

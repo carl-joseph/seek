@@ -1,3 +1,5 @@
+@use "utility" as *;
+
 /*--------------------------------------------------------------
 ## Link Styling
 --------------------------------------------------------------*/
@@ -26,5 +28,14 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+.clarity-logo {
+    @include icon("../images/clarity-logo.svg");
+    width: 39px;
+    aspect-ratio: 1;
+    @media (max-width: 768px) {
+        width: 24px;
     }
 }
