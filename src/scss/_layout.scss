@@ -26,16 +26,36 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Stempel Garamond LT Pro';
+    src: url('../fonts/StempelGaramondLTPro-Italic.woff2') format('woff2'),
+        url('../fonts/StempelGaramondLTPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stempel Garamond LT Pro';
+    src: url('../fonts/StempelGaramondLTPro-Roman.woff2') format('woff2'),
+        url('../fonts/StempelGaramondLTPro-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 .h0 {
     line-height: 1;
     font-size: 42px;
-    font-family: "Suisse Works", serif;
+    font-family: 'Stempel Garamond LT Pro';
     font-weight: 400;
     @media (max-width: 768px) {
         font-size: 24px;
     }
     &.large {
-        font-size: 64px;
+        font-size: 80px;
         @media (max-width: 768px) {
             font-size: 24px;
         }
@@ -45,7 +65,7 @@
 .h1 {
     line-height: 1;
     font-size: 42px;
-    font-family: "Suisse Works", serif;
+    font-family: 'Stempel Garamond LT Pro';
     font-weight: 400;
     @media (max-width: 768px) {
         font-size: 26px;
@@ -55,7 +75,7 @@
 .h2 {
     font-size: 32px;
     line-height: 1.1;
-    font-family: "Suisse Works", serif;
+    font-family: 'Stempel Garamond LT Pro';
     font-weight: 400;
     @media (max-width: 768px) {
         font-size: 24px;
@@ -65,7 +85,7 @@
 .paragraph {
     font-family: "Gerstner Programm FSL";
     letter-spacing: 0.01em;
-    line-height: 1.43;
+    line-height: 1.4;
 }
 
 body {
@@ -73,7 +93,7 @@ body {
     font-size: 15px;
     line-height: 1.3;
     background: #000;
-    font-family: "Suisse Works", serif;
+    font-family: 'Stempel Garamond LT Pro';
     -webkit-font-smoothing: antialiased;
     font-smooth: always;
     text-rendering: optimizeLegibility;

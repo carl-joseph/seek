@@ -29,36 +29,28 @@ export default function ProjectsFilter({ projects }) {
 
     const onClick = sector => {
         if (sector === activeFilter) return
-
         setActiveFilter(sector)
-
         gsap.to(listRef.current, {
             opacity: 0,
-            duration: 0.4,
+            duration: 0.5,
             onComplete: () => {
                 setDisplayedFilter(sector)
-                gsap.to(listRef.current, { opacity: 1, duration: 0.6 })
+                gsap.to(listRef.current, { opacity: 1, duration: 0.5 })
             },
         })
     }
-
     useGSAP(
         () => {
             if (!triggerRef.current || !barRef.current) return
-
             const wasOpen = prevIsFilterOpen.current
             prevIsFilterOpen.current = isFilterOpen
             if (!wasOpen && !isFilterOpen) return
-
             const tl = gsap.timeline()
-
             if (isFilterOpen) {
                 tl.to(triggerRef.current, { opacity: 0, duration: 0.2 }).to(barRef.current, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" })
                 return () => tl.kill()
             }
-
-            tl.to(barRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
-
+            tl.to(barRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.35 })
             return () => tl.kill()
         },
         { dependencies: [isFilterOpen], scope: barRef }
@@ -74,8 +66,7 @@ export default function ProjectsFilter({ projects }) {
                     <div className='projects-filter-scroll flex gap-5 text-lg'>
                         {sectors.map((sector, i) => (
                             <button key={sector} onClick={() => onClick(sector)} className={`${activeFilter === sector ? "" : "op-50"} filter`} type='button'>
-                                {sector}
-                                {i < sectors.length - 1 && ","}
+                                {sector}{i < sectors.length - 1 && ","}
                             </button>
                         ))}
                     </div>

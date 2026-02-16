@@ -29,15 +29,13 @@ export default function JournalsFilter({ journals }) {
 
     const onClick = category => {
         if (category === activeFilter) return
-
         setActiveFilter(category)
-
         gsap.to(listRef.current, {
             opacity: 0,
-            duration: 0.4,
+            duration: 0.5,
             onComplete: () => {
                 setDisplayedFilter(category)
-                gsap.to(listRef.current, { opacity: 1, duration: 0.6 })
+                gsap.to(listRef.current, { opacity: 1, duration: 0.5 })
             },
         })
     }
@@ -45,20 +43,15 @@ export default function JournalsFilter({ journals }) {
     useGSAP(
         () => {
             if (!triggerRef.current || !barRef.current) return
-
             const wasOpen = prevIsFilterOpen.current
             prevIsFilterOpen.current = isFilterOpen
             if (!wasOpen && !isFilterOpen) return
-
             const tl = gsap.timeline()
-
             if (isFilterOpen) {
                 tl.to(triggerRef.current, { opacity: 0, duration: 0.2 }).to(barRef.current, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" })
                 return () => tl.kill()
             }
-
-            tl.to(barRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.2 })
-
+            tl.to(barRef.current, { opacity: 0, x: 0, duration: 0.35, ease: "power2.inOut" }).to(triggerRef.current, { opacity: 1, duration: 0.35 })
             return () => tl.kill()
         },
         { dependencies: [isFilterOpen], scope: barRef }
@@ -74,8 +67,7 @@ export default function JournalsFilter({ journals }) {
                     <div className='projects-filter-scroll flex gap-5 text-lg'>
                         {categories.map((category, i) => (
                             <button key={category} onClick={() => onClick(category)} className={`${activeFilter === category ? "" : "op-50"} filter`} type='button'>
-                                {category}
-                                {i < categories.length - 1 && ","}
+                                {category} {i < categories.length - 1 && ","}
                             </button>
                         ))}
                     </div>

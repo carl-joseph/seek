@@ -4,6 +4,15 @@
 ## Link Styling
 --------------------------------------------------------------*/
 
+.seek-symbol {
+    width: 30px;
+    aspect-ratio: 1;
+    background-image: url('../images/symbol.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 .footer-icon {
     position: absolute;
     bottom: 20px;

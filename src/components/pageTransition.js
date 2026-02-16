@@ -15,7 +15,7 @@ const PageTransition = ({ children }) => {
       if (pathname === path) return
       transitionWrapper.classList.remove("fade--in")
       transitionWrapper.classList.add("fade--out")
-      setTimeout(() => navigate(path), 350)
+      setTimeout(() => navigate(path), 500)
     }
 
     function fadeInPage() {

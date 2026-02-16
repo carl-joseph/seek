@@ -29,6 +29,7 @@ export default function InformationPage({ data: { page } }) {
                 <Spacer className='m-show' />
                 <InformationCollaborators collaborators={page.collaborators} />
             </div>
+            <Spacer />
         </Layout>
     )
 }

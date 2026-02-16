@@ -46,14 +46,11 @@ function ProjectItem({ project, index }) {
     const SCROLL_INFLUENCE = 0.15
     const autoScrollSpeed = isOdd ? -0.00012 : 0.00008
     const doubledMedia = [...(project.previewMedia || []), ...(project.previewMedia || [])]
-
     useGSAP(
       () => {
         if (!swiperRef.current || !containerRef.current) return
-
         let isDesktop = false
         const mm = gsap.matchMedia()
-
         mm.add("(min-width: 768px)", () => {
           isDesktop = true
           return () => {
@@ -70,9 +67,7 @@ function ProjectItem({ project, index }) {
           const totalProgress = (((progressRef.current + scrollOffset) % 1) + 1) % 1
           swiper.setProgress(totalProgress, 0)
         }
-
         gsap.ticker.add(ticker)
-
         const trigger = ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top bottom+=20%",
@@ -82,7 +77,6 @@ function ProjectItem({ project, index }) {
             scrollProgressRef.current = self.progress
           },
         })
-
         return () => {
           gsap.ticker.remove(ticker)
           trigger.kill()

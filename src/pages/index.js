@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 
 import { graphql } from "gatsby"
-import FeaturedProject from "../components/featuredProject"
-import HeroBanner from "../components/heroBanner"
-import Journal from "../components/journal"
-import Layout from "../components/layout"
-import MixedWork from "../components/mixedWork"
-import Preloader from "../components/preloader"
-import Projects from "../components/projects"
-import Seo from "../components/seo"
 import Spacer from "../components/spacer"
 import TitleSection from "../components/titleSection"
+import FeaturedProject from "../components/featuredProject"
+import HeroBanner from "../components/heroBanner"
+import Preloader from "../components/preloader"
+import Projects from "../components/projects"
+import Journal from "../components/journal"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
 
 export default function IndexPage({ data: { page } }) {
     const [isPreloading, setIsPreloading] = useState(true)
@@ -23,7 +23,9 @@ export default function IndexPage({ data: { page } }) {
                 <TitleSection title={page.title} />
                 <Projects projects={page.projects} />
                 <FeaturedProject {...page.featuredProjectOne} />
+                <Spacer className='m-hide' />
                 <Journal journals={page.journals} />
+                <Spacer className='m-hide' />
                 <FeaturedProject {...page.featuredProjectTwo} />
                 <Spacer />
                 <Spacer />
@@ -98,20 +100,6 @@ export const query = graphql`
                         gatsbyImageData
                     }
                     video
-                }
-            }
-            mixedTitle
-            mixedWork {
-                title
-                link
-                assetContent {
-                    aspectRatio
-                    assetField {
-                        image {
-                            gatsbyImageData
-                        }
-                        video
-                    }
                 }
             }
         }
