@@ -58,7 +58,7 @@ export default function Footer({ whiteBg = false, showCta = false }) {
                     <div className='flex gap-20 align-center mla'>
                         <div className='flex align-center gap-40'>
                             <span className='mr20'>Part of</span>
-                            <span className='f-500'>Clarity</span>
+                            <a href='https://claritystudio.org/' className='f-500' target='_blank' rel='noopener noreferrer'>Clarity</a>
                         </div>
                         <div className='clarity-logo' />
                     </div>
@@ -114,7 +114,7 @@ function FooterMobile({ year, info }) {
                 <p className='footer-mobile--copy max-120 w-100'>© Seek, {year}</p>
                 <div className='flex gap-10 align-center footer-mobile-clarity'>
                     <span className='op-50'>Part of</span>
-                    <span className='f-500'>Clarity</span>
+                    <a href='https://claritystudio.org/' className='f-500' target='_blank' rel='noopener noreferrer'>Clarity</a>
                     <div className='clarity-logo' />
                 </div>
             </div>

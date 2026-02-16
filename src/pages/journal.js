@@ -12,7 +12,6 @@ export default function JournalPage({ data: { journals } }) {
             <Spacer />
             <JournalsFilter journals={journals.nodes} />
             <Spacer />
-            <Spacer />
         </Layout>
     )
 }

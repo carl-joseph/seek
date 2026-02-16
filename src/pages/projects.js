@@ -11,6 +11,7 @@ export default function ProjectsPage({ data: { projects } }) {
             <Spacer />
             <Spacer />
             <ProjectsFilter projects={projects.nodes} />
+            <Spacer />
         </Layout>
     )
 }
