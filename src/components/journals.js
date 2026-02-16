@@ -20,7 +20,7 @@ function JournalCard({ journal }) {
             <div className={`${getAspectRatioClass(journal.assetContent?.aspectRatio)} pos-rel overflow image--zoom`}>
                 <MediaAsset video={journal.assetContent?.assetField?.video} image={journal.assetContent?.assetField?.image} />
             </div>
-            <div className='flex space-between align-start mt10 gerstner f-18'>
+            <div className='flex space-between align-start mt10 gerstner m-16 f-18'>
                 <div>
                     <h3>{journal.previewTitle}</h3>
                     {journal.date && <p className=''>{journal.date}</p>}
