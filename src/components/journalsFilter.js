@@ -10,12 +10,10 @@ export default function JournalsFilter({ journals }) {
     const [activeFilter, setActiveFilter] = useState("All")
     const [displayedFilter, setDisplayedFilter] = useState("All")
     const [isFilterOpen, setIsFilterOpen] = useState(false)
-
     const listRef = useRef(null)
     const triggerRef = useRef(null)
     const barRef = useRef(null)
     const prevIsFilterOpen = useRef(false)
-
     const categories = useMemo(() => {
         const allCategories = journals.map(j => j.category?.title).filter(Boolean)
         const uniqueCategories = [...new Set(allCategories)]
@@ -39,7 +37,6 @@ export default function JournalsFilter({ journals }) {
             },
         })
     }
-
     useGSAP(
         () => {
             if (!triggerRef.current || !barRef.current) return
@@ -60,9 +57,7 @@ export default function JournalsFilter({ journals }) {
     return (
         <>
             <div className='projects-filter p10'>
-                <button className='projects-filter-trigger text-lg' onClick={() => setIsFilterOpen(true)} type='button' ref={triggerRef} aria-expanded={isFilterOpen} aria-controls='journals-filter-bar'>
-                    Filter by
-                </button>
+                <button className='projects-filter-trigger text-lg' onClick={() => setIsFilterOpen(true)} type='button' ref={triggerRef} aria-expanded={isFilterOpen} aria-controls='journals-filter-bar'>Filter by</button>
                 <div className={`projects-filter-bar ${isFilterOpen ? "active" : ""}`} ref={barRef} id='journals-filter-bar'>
                     <div className='projects-filter-scroll flex gap-5 text-lg'>
                         {categories.map((category, i) => (

@@ -27,7 +27,7 @@ export default function Projects({ projects }) {
 const ViewAll = () => {
     return (
         <div className='view-all'>
-            <Spacer />
+            <Spacer className='m-hide'  />
             <div className='fade--in flex gap-20 text-lg p10' data-sal>
                 <div className='max-180 w-100 m-hide'></div>
                 <Link to='/projects' className='link btn-arrow'>View All Projects <Arrow /></Link>

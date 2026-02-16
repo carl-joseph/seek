@@ -544,6 +544,12 @@ div.bg-image,
     }
 }
 
+.m-grid-1 {
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
 .m-grid-2 {
     @media (max-width: 768px) {
         grid-template-columns: 1fr 1fr;
