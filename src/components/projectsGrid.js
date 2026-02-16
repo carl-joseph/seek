@@ -21,7 +21,7 @@ function ProjectCard({ project }) {
             <div className={`${getAspectRatioClass(firstMedia?.aspectRatio)} pos-rel overflow image--zoom`}>
                 <MediaAsset video={firstMedia?.assetField?.video} image={firstMedia?.assetField?.image} />
             </div>
-            <div className='flex space-between align-center mt10 f-18 gerstner'>
+            <div className='flex space-between align-center mt10 f-18 m-16 gerstner'>
                 <span>{project.previewTitle}</span>
                 <span className='btn-arrow'>View Project <Arrow /></span>
             </div>
