@@ -6,7 +6,7 @@ import { getAspectRatioClass } from "./utils"
 export default function Journals({ journals }) {
     if (!journals?.length) return null
     return (
-        <div className='p10 grid grid-4 m-grid-1 gap-10 row-80'>
+        <div className='p10 pt0 grid grid-4 m-grid-1 gap-10 row-80'>
             {journals.map((journal, i) => (
                 <JournalCard key={i} journal={journal} />
             ))}
@@ -20,13 +20,13 @@ function JournalCard({ journal }) {
             <div className={`${getAspectRatioClass(journal.assetContent?.aspectRatio)} pos-rel overflow image--zoom`}>
                 <MediaAsset video={journal.assetContent?.assetField?.video} image={journal.assetContent?.assetField?.image} />
             </div>
-            <div className='flex space-between align-start mt10 gerstner m-16 f-18'>
+            <div className='flex space-between align-start mt10 gerstner f-14'>
                 <div>
                     <h3>{journal.previewTitle}</h3>
                     {journal.date && <p className=''>{journal.date}</p>}
                 </div>
                 {journal.category?.title && (
-                    <span className='btn-arrow'>{journal.category.title} <Arrow /></span>
+                    <span className='btn-arrow mba'>{journal.category.title} <Arrow /></span>
                 )}
             </div>
         </Link>

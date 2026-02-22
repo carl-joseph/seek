@@ -62,7 +62,7 @@ export default function JournalsFilter({ journals }) {
                     <div className='projects-filter-scroll flex gap-5 text-lg'>
                         {categories.map((category, i) => (
                             <button key={category} onClick={() => onClick(category)} className={`${activeFilter === category ? "" : "op-50"} filter`} type='button'>
-                                {category} {i < categories.length - 1 && ","}
+                                {category}{i < categories.length - 1 && ","}
                             </button>
                         ))}
                     </div>

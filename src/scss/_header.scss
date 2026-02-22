@@ -13,15 +13,13 @@
 }
 
 .masthead-center {
-    position: absolute;
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
     transition: opacity 0.25s ease;
-
     @media (max-width: 768px) {
         margin-top: 40px;
     }
-
     .masthead--menu-open & {
         @media (max-width: 768px) {
             opacity: 0;
@@ -33,7 +31,6 @@
 .masthead-right {
     margin-left: auto;
     white-space: nowrap;
-
     @media (max-width: 768px) {
         display: none;
     }
@@ -41,7 +38,6 @@
 
 .masthead-menu-trigger {
     transition: opacity 0.25s ease;
-
     @media (max-width: 768px) {
         position: absolute;
         background: transparent;
@@ -51,7 +47,6 @@
         top: 10px;
         border: 0;
     }
-
     .masthead--menu-open & {
         @media (max-width: 768px) {
             opacity: 0;
@@ -75,7 +70,6 @@
         pointer-events: none;
         opacity: 0;
         transition: opacity 0.35s ease;
-
         &.active {
             opacity: 1;
             pointer-events: auto;

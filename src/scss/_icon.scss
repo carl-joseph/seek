@@ -7,10 +7,20 @@
 .seek-symbol {
     width: 30px;
     aspect-ratio: 1;
+    animation: spin 3s linear infinite;
     background-image: url('../images/symbol.svg');
+    animation-play-state: paused;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    &:hover {
+        animation-play-state: running;  
+    }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
 .footer-icon {

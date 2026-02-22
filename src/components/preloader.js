@@ -30,7 +30,7 @@ export default function Preloader({ onComplete }) {
 
         const tl = gsap
             .timeline()
-            .to(".preloader-seek", { opacity: 1, duration: 0.5 })
+            .to(".preloader-seek", { opacity: 1, duration: 0 })
             .to(officeEl, { opacity: 1, duration: 0.2 })
             .to(split.words, { opacity: 1, duration: 0.4, stagger: 0.15 }, "<")
             .to(taglineRef.current, { opacity: 1, duration: 0.5 })

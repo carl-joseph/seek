@@ -1,4 +1,5 @@
 import React from "react"
+import Spacer from "../components/spacer"
 
 export default function ProjectIntro({ introduction, client, service, sector, year }) {
   const rows = [
@@ -8,8 +9,11 @@ export default function ProjectIntro({ introduction, client, service, sector, ye
     ["Year", year],
   ]
   return (
-    <div className='h-80vh flex flex-col p10'>
+    <div className='flex flex-col p10'>
       <h1 className='h1'>{introduction}</h1>
+      <Spacer />
+      <Spacer className='m-hide' />
+      <Spacer className='m-hide' />
       <div className='max-350 mta flex flex-col gerstner op-50'>
         {rows.map(([label, value]) => (
           <div key={label} className='flex gap-20'>
